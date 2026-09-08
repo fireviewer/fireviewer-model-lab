@@ -1,0 +1,608 @@
+[
+  {
+    "source": "fireviewermodel/training/detection_benchmark_external_v1/scripts/acquire_nifc_future_holdout.py",
+    "sha256": "18e2adb97297c8b8a775ace14dd951776b26de8a886b49153d34da4a3556375f",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/detection_benchmark_external_v1/scripts/acquire_nifc_future_holdout.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/detection_benchmark_external_v1/scripts/audit_independence.py",
+    "sha256": "29bcbce8d7134273a663fd5d5ff8d29f1ac056c839b623757a0f5fd556e807d9",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/detection_benchmark_external_v1/scripts/audit_independence.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/detection_benchmark_external_v1/scripts/build_contact_sheets.py",
+    "sha256": "00dfec766a7a5c8b633b0f838040c43386b06962f5bf6e06be39c4193065f1a5",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/detection_benchmark_external_v1/scripts/build_contact_sheets.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/detection_benchmark_external_v1/scripts/build_exclusion_index.py",
+    "sha256": "f3dad075a21267d688352c1a309a101c6a204ab064afa39d22eb602ce2313a4b",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/detection_benchmark_external_v1/scripts/build_exclusion_index.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/detection_benchmark_external_v1/scripts/common.py",
+    "sha256": "613829bbc03d3d4645ade087a43ab3d9d483d351be90ec1deb52d8729f0636ff",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/detection_benchmark_external_v1/scripts/common.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/detection_benchmark_external_v1/scripts/validate_release.py",
+    "sha256": "0c8b78a390f36f6e11debb8e03c12df29225a4d7ea2086b93306b9bb310df641",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/detection_benchmark_external_v1/scripts/validate_release.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/maintenance/verify_dataset_cleanup.py",
+    "sha256": "cf28ad24cf99ee64b07a408c7da6a1278c18fa8377a85f753019f48446cf84a9",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/maintenance/verify_dataset_cleanup.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/adjudicate_dfire_ground_subset.py",
+    "sha256": "52fdac92a178e40f695defa87d85d3eee69d1417ccce93564d4e17841ade0685",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/adjudicate_dfire_ground_subset.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/adjudicate_incremental_nemo_candidates.py",
+    "sha256": "f8bbee2c97ca0dbed63ef181e3fc2f0997f10dbe28a010229bbe2aa7079fe097",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/adjudicate_incremental_nemo_candidates.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/adjudicate_local_hard_negatives.py",
+    "sha256": "87b85f4b3c4f80d97bdfd5182814011f8cb644eab6ed3481d9ec154f398b9805",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/adjudicate_local_hard_negatives.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/adjudicate_nemo_candidates.py",
+    "sha256": "f5e8b724ba13f2ffd5464f110e0b213b6b5f11d09153f569eadacff7e714e83d",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/adjudicate_nemo_candidates.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/adjudicate_nemo_final_expansion.py",
+    "sha256": "5cd7c43616196435e22842e05d3f3940ebc4a704862a2d96cd6dfe4faf0f5f02",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/adjudicate_nemo_final_expansion.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/audit_v7_splits.py",
+    "sha256": "82839e009ed61cb4c60fe3ab99e42010745f74304a0e47ae3a00e520d0f53b09",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/audit_v7_splits.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/build_dfire_gap_candidates.py",
+    "sha256": "aea6982a66876923dd1322676e1693c9584d3b309a260d3a439bed69e0e09fcb",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/build_dfire_gap_candidates.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/build_local_candidate_pool.py",
+    "sha256": "7a86400daa66475afabff3a5a80bc51298a27dd4325d68489eedad1a1b94b976",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/build_local_candidate_pool.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/build_local_dfire_gap_candidates.py",
+    "sha256": "d92f58f47f2fdde06590d549f43b57d18107001ef24d7fca01634760c5613480",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/build_local_dfire_gap_candidates.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/build_nemo_gap_candidates.py",
+    "sha256": "0bf036d40b5fc4664007d8c243555dca6e3a3c865658f4e241f94eb2a2ad5af2",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/build_nemo_gap_candidates.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/build_smoke100_candidates.py",
+    "sha256": "acd9c1ab149833ef49564954715a3a9d8df9fc84bbdd1da4689392b560945e7a",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/build_smoke100_candidates.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/build_v7_expanded_ready.py",
+    "sha256": "954ee6fb64ff3584a07d4373a613f17a224825d975364ad3a0ab94072bf3dba3",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/build_v7_expanded_ready.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/build_v7_ready.py",
+    "sha256": "7f93522bced28a04c21563f68029675d5ddc2380fe4b07ef1084cbedb0d4185f",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/build_v7_ready.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/materialize_v4_reviewed_recovery.py",
+    "sha256": "217048cbdebbeb0e561a9be5190b1c7d63b6bce8287fcc825a024c94f212876e",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/materialize_v4_reviewed_recovery.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/prepare_audited_v7.py",
+    "sha256": "b851fe0ed27a701fb3d1bc3496503d3aa1e9892bda770578dc38eee4daa54d5e",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/prepare_audited_v7.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/prepare_coco_v7.py",
+    "sha256": "08e45fadb47e59af267878bda951cdf36fe3a7edf35cccfa442defea9cc30b7c",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/prepare_coco_v7.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/prepare_incremental_nemo_review.py",
+    "sha256": "9e78277451aa08f63513fe2d6ec9240adf6d4a67bba4cf02cb32c01f3a2f997d",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/prepare_incremental_nemo_review.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/render_candidate_zooms.py",
+    "sha256": "6885f8d3f341f7305740eecf2d01b8fafe746641344f7a7e1e739bac4073341f",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/render_candidate_zooms.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/split_registry.py",
+    "sha256": "fa0d6d298c7be75b3bd52cb4d3280aac4d15231e2ac31a14af4f9158c0dfe2fd",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/split_registry.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/tests/test_build_local_candidate_pool.py",
+    "sha256": "cb70c654254771f1795d5f6918373cb6169a4423eeb2433d35105da58a276b58",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/tests/test_build_local_candidate_pool.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/tests/test_build_v7_ready.py",
+    "sha256": "6542aca3a7c0909f7cfc0b01b483ad9e3c696504ff54a251241a449ab298980a",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/tests/test_build_v7_ready.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/tests/test_review_ledgers.py",
+    "sha256": "ab3a255e2b342990c9b1f93155d3af2de8a2b2d59215db1bf9e49032062682b9",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/tests/test_review_ledgers.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v7/tests/test_split_registry.py",
+    "sha256": "898c46711f0c328da2944acc37e56487f25e9b98fc0e7dbd0550a87f4a7379e0",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v7/tests/test_split_registry.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/acquire_commons.py",
+    "sha256": "8b204f3a15f8952d3d8d9ac96c89e115fcd12729da6e0257798705384026572a",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/acquire_commons.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/acquire_dfire.py",
+    "sha256": "b0b84528003e281b5db18893992c1ecee6a4b3d41d44950f013bbaca31eb4166",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/acquire_dfire.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/acquire_fasdd.py",
+    "sha256": "a63c695d285cb0de069f9ab756ae287f2038bb76c27aa5ee62570e23e4a2604a",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/acquire_fasdd.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/acquire_multinatsmoke.py",
+    "sha256": "de246fad75e68102e0944e9fdb6dbb06b596a0975ba8179b7c202fad7518563f",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/acquire_multinatsmoke.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/acquire_pyrosdis.py",
+    "sha256": "d1ffdbb309768cdf0ca364a389825d12695b8915157dd7581e52df0dd4ebb7ea",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/acquire_pyrosdis.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/acquire_wsdataset.py",
+    "sha256": "3edd6c8715ba097664f4158179edc15df475fb469a95f083dd579504df57e501",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/acquire_wsdataset.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/acquire_wui.py",
+    "sha256": "c91f2658738d2439e99c397c5eb5b2d2a23837d1cd8e76907987d2580174efdf",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/acquire_wui.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/analyze_dfire_revision.py",
+    "sha256": "aa427aad113187bd621159fd449be9c9d2fe3beae14a8f399d87578065de1175",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/analyze_dfire_revision.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/assemble_extension.py",
+    "sha256": "3675f9b8d8357d8686feede4c44a830cdc6ae12131d6ca5d4dc7cf15cc787f19",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/assemble_extension.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/audit_coverage.py",
+    "sha256": "e176f40aa32e374c9049705b7a3be475d87e784d04b4b569448c7008b2c21554",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/audit_coverage.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/build_dfire_reviewed_corpus.py",
+    "sha256": "52009e012ac1b0ce52964ad7cedd2892fa9e33ff4e1585c6253aeeca2cd1dcbe",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/build_dfire_reviewed_corpus.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/build_gaia_personal_generated_view.py",
+    "sha256": "c753bcf021e14060e67fb5c88449bd05ebc60208c63b064d27b255bb856dc82a",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/build_gaia_personal_generated_view.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/build_reviewed_base.py",
+    "sha256": "4b6d8d0e4241c9f3af8af4c51e8827a69d134a278cb6cce94742183f54ac1d5e",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/build_reviewed_base.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/build_small_target_curriculum.py",
+    "sha256": "758dbd9eadbcf50714abcfa7a7cf3335ce6798aa24f587b5365785ae2ba0d4a5",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/build_small_target_curriculum.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/collect_run_lessons.py",
+    "sha256": "af0b314082e9fccd509d93c69b1c216d43b774205b842737b3bd3e36fbe5046c",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/collect_run_lessons.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/index_wsdataset.py",
+    "sha256": "2905c9500b57e8681cb232a5d3585c0a179b9a2c8822cb322975f620ce25f21b",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/index_wsdataset.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/index_wui.py",
+    "sha256": "b3dc593792723c6130102d6382880da77f34a48b1673a121573def385ab38bc2",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/index_wui.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/prepare_bulk_dfire.py",
+    "sha256": "282cf5e9e04e8dc3f5f3d6ab1547cdfe9a9aee803a967a7185b6577fbfc2c6f5",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/prepare_bulk_dfire.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/prepare_completion_queue.py",
+    "sha256": "f3a1c3f6bf419c3548135b795e2141c763f83b40faf1cce4b60b88e57053e544",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/prepare_completion_queue.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/prepare_dfire_revision.py",
+    "sha256": "9f4babae1d1b641622e6db7eb74e4f05cfb31a23f98e5172717b72b089eb439f",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/prepare_dfire_revision.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/prepare_extension_review.py",
+    "sha256": "0b635a14d6b353d4ef5171ecf38239398a683e7d22323dfddcf938a13cdb3135",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/prepare_extension_review.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/prepare_synthetic_supplement.py",
+    "sha256": "d750d2edcfa0b445c7090d497d82ce6d258fab928a7d549bae7002a3a70169cc",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/prepare_synthetic_supplement.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/prepare_targeted_reuse.py",
+    "sha256": "75082bfda1f304c5d85c79c30bf94019f59d5f9121b4a3cf25b2b9426eabf9a3",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/prepare_targeted_reuse.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/prepare_training_view.py",
+    "sha256": "d8895f0cf79bc000de77f1b0aa3cad129a1d19ae80f2a9db9d7f3202a6d896d6",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/prepare_training_view.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/propose_wui_annotations.py",
+    "sha256": "8588096b1c292a44c476294a7db21d98c18c43eba88113bee3429f859eb01f8e",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/propose_wui_annotations.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/reconcile_review_evidence.py",
+    "sha256": "7b583c3bd957ebb10bf3b70e40b01299145c889361451920a02c9f6006bf2b4b",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/reconcile_review_evidence.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/record_extension_review.py",
+    "sha256": "f35baf82638647b5c734d7f97ca8dd0152a393d36ae7cdc1084a5b851113b7c2",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/record_extension_review.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/record_wsdataset_inspection.py",
+    "sha256": "90c8b2c024975a0e5324dc260a3b5f9b6c37e4a7b0315cb575e4014c64e1b022",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/record_wsdataset_inspection.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/render_manual_corrections.py",
+    "sha256": "0ad11ff100f0f7d03923e90279032cfa7ddca75a874ef99db2d40f5f1281fdaf",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/render_manual_corrections.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/render_review_packets.py",
+    "sha256": "e233a43f02b93037c8ebfb1966d9cebc70463e29da86ffab31ce39cabf60c063",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/render_review_packets.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/source_identity.py",
+    "sha256": "ee7fb9dfefe67b4e9b76e5a82c08aed0188186cb5540cf87d113141c1471b7a8",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/source_identity.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_acquire_commons.py",
+    "sha256": "19aec9a513f94673d837841713f94748826190a8046e9b5fad2fa712d55fab18",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_acquire_commons.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_acquire_dfire.py",
+    "sha256": "5c3467d44bc749982f52786b3b851abbc87c3ec83360fa6f0e8a8d9d1711d60f",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_acquire_dfire.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_acquire_fasdd.py",
+    "sha256": "582265023628a45943ecc0d06416e0c3b9b7d21accb6ca517238d31c0277a56c",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_acquire_fasdd.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_acquire_multinatsmoke.py",
+    "sha256": "4452fdf7c3e02c385e6128ce0a5f16f39ca234c1e4cf1a148e83b64c98c614f8",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_acquire_multinatsmoke.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_acquire_pyrosdis.py",
+    "sha256": "b396cb934a48874e9f69d410804a427349e51d259d914c95ebff2f0b2231fc96",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_acquire_pyrosdis.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_acquisition.py",
+    "sha256": "fcc53b7c217a2bbea0dc421ba0f63a5b1c159f2c49548456be4c47fb5e61acc4",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_acquisition.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_analyze_dfire_revision.py",
+    "sha256": "e5feec04b645061d629099e770030a3ae187e47f28bb4be3a75dd898cbe0b639",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_analyze_dfire_revision.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_assemble_extension.py",
+    "sha256": "27893528c0eb667eb61da6b93087eb0fe600c52b6a93b33a823e28046798f14d",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_assemble_extension.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_build_dfire_reviewed_corpus.py",
+    "sha256": "ef1e3f9b89efe71fcf98cbb354a60c2d83f4d8af6f4067f787e900930f4b97d4",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_build_dfire_reviewed_corpus.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_build_gaia_personal_generated_view.py",
+    "sha256": "f39726bedb20addeed0b76a1bf9372dba15c9863883c0fe81ad2b2ab0fb966a0",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_build_gaia_personal_generated_view.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_build_small_target_curriculum.py",
+    "sha256": "c1510f31f19b11a249034e35ebd4beaf818b00de9ca1407fd9e0123b8d4f9033",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_build_small_target_curriculum.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_cli_gate.py",
+    "sha256": "0dd1f88703279507fb989887259563564b86427b205fdb779417e43fa4d64fe2",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_cli_gate.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_completion_queue.py",
+    "sha256": "effdf1c893494822766ad5b0c16f6c2208cb0c6f509137adf401e9700c80d3fe",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_completion_queue.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_coverage.py",
+    "sha256": "39aff3c41c8ec1527f9a1ae78c2090a20428d8124240760154d0fd79eb3e126b",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_coverage.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_prepare_dfire_revision.py",
+    "sha256": "f1ff58a3f2c615edfed0f423665478509062101875036f1bd126a8cfa0b337a1",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_prepare_dfire_revision.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_prepare_extension_review.py",
+    "sha256": "6423482e0a3be27cd40bca8d701996f6110b441c3720728f88f0819d033612d7",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_prepare_extension_review.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_reconcile_review_evidence.py",
+    "sha256": "bce1cb397c03bd6714df33cad56adeca9998a5350942e586e90b16698bf7c9f9",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_reconcile_review_evidence.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_record_extension_review.py",
+    "sha256": "50693c0aca21794e5f292d51f047ae294a88706120afff3c48498f52a693b393",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_record_extension_review.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_render_manual_corrections.py",
+    "sha256": "b74c82331012be289f3e7ec83023bb10abde3a07322ccc797018c04bbf758cac",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_render_manual_corrections.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_reviewed_base.py",
+    "sha256": "e533610ae5413ed1b689cee9046af9317ad2a9a953931e0b8485cf0092af3e3e",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_reviewed_base.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_source_identity.py",
+    "sha256": "5d8323d95dbb3b088667733a12ecb65e4bb2139f5a42253395f6c337203de870",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_source_identity.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_synthetic_supplement.py",
+    "sha256": "3445ccd77a67051c3d411c3ba48fd2cf006f180bbc4ef88aebddf9ace18a88ee",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_synthetic_supplement.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dataset_v8/tests/test_training_view.py",
+    "sha256": "c206169a463315d41a66519b067c95d676b519429ab93003429b5355778d99bf",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dataset_v8/tests/test_training_view.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/benchmark_deim_v6.py",
+    "sha256": "33fa739eee9eb610a445b51fbaeee03415d32e628e359aac803d4667d980c6d4",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/benchmark_deim_v6.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/benchmark_shared_v5.py",
+    "sha256": "64dcef42f3ae2aa6837376421fab408f2a124e17677e66bef05cd9638bd1e1ba",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/benchmark_shared_v5.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/benchmark_training_v8.py",
+    "sha256": "bdf7a101b46dff347eb4c98b5c0224af697a2da701c5dd102ef9f61da24562b5",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/benchmark_training_v8.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/export_deim_predictions.py",
+    "sha256": "2825207179be2ab4ab3349e789154774f3a3eda086373e44c554a9609f417289",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/export_deim_predictions.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/export_rfdetr_predictions.py",
+    "sha256": "7aeaf2b31666865a12c2b191917651f030caa94378d9175eb50935b0688f99ab",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/export_rfdetr_predictions.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/forward_deim_litlogger.py",
+    "sha256": "68944085fb6698ffbca25def7776049607650f5d971b9710c9f4f925d804dc6a",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/forward_deim_litlogger.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/preflight_deim_v5.py",
+    "sha256": "b6d7306083151693c73d29fadf8d0e38d45f7159aaf0250f2af34d3fc6e52512",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/preflight_deim_v5.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/prepare_coco_v5.py",
+    "sha256": "71f5b7a937436895db1b9f8cde4e0787e430f02c5f152185478797d324a1812c",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/prepare_coco_v5.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/train_deim_v5.py",
+    "sha256": "818c2e98977168cd5a05f0b799b218e966eb950771ae223a4043588848f797bd",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/train_deim_v5.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/train_rfdetr_v5.py",
+    "sha256": "4f4929091f40732381a50b05b27c26b43785be734645ef3124a709901117e26b",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/train_rfdetr_v5.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/tests/test_benchmark_deim_v6.py",
+    "sha256": "856473ce98b89fdcc91101951ff11ca7caee72524601df6440a7b3f8576e9768",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/tests/test_benchmark_deim_v6.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/tests/test_deim_checkpoint_epochs.py",
+    "sha256": "11406b917dd9ea263dcbc4a7f6d8a2b335b629bb1c30afcfd81a9d9f447d26e2",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/tests/test_deim_checkpoint_epochs.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/tests/test_forward_deim_litlogger.py",
+    "sha256": "42ee0060428ed488271b6788d7e7e4f49da540160ec031ae3e03aa6c661e97d1",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/tests/test_forward_deim_litlogger.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_dual_v5/tests/test_lighting_conditions.py",
+    "sha256": "6fd48ee027d94d4b3e252fd6e49ff5141a4a825bf37399ddc793bf976378297a",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_dual_v5/tests/test_lighting_conditions.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_rtdetr_v5/train_rtdetr_pointing_v5.py",
+    "sha256": "5e88609ba8a770fdd2b7ce4f51ac0aff7bbe14548bc650692ba06b7f9a439df5",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_rtdetr_v5/train_rtdetr_pointing_v5.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_rtdetr_v5/v5_contract.py",
+    "sha256": "32d89e39834203ec8d85bd8c6b1b0b332c802e488f581ef923e928657acab104",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_rtdetr_v5/v5_contract.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  },
+  {
+    "source": "fireviewermodel/training/pointing_rtdetr_v5/tests/test_v5_contract.py",
+    "sha256": "1cbed883582166e0f29b95a5a5c624b6acb3cf749e4c5005b465662951abd166",
+    "destination": "fireviewer/fireviewer-model-lab/src/fireviewer_model_lab/recipes/pointing_rtdetr_v5/tests/test_v5_contract.py",
+    "licence": "original declaration if present; otherwise pending rights inventory"
+  }
+]

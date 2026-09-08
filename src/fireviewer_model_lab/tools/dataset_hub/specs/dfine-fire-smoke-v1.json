@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "train_id": "dfine-fire-smoke-v1",
+  "training_ready": true,
+  "promotion_ready": false,
+  "blocking_reasons": [],
+  "promotion_blocking_reasons": [
+    "frozen_detector_benchmark_results_missing"
+  ],
+  "contract_revision": "mvp-a40-v2",
+  "model_contract": {
+    "primary": {
+      "model_id": "ustc-community/dfine-xlarge-obj365",
+      "revision": "a99923ec2727499f769a82edba864299fceaca48",
+      "role": "fire_smoke_detector_primary"
+    },
+    "challengers": [
+      {
+        "model_id": "pyronear/yolo11s_quick-quokka_v8.0.0",
+        "revision": "086799292e7e84a6ff8bd6394a5011575a6400ea",
+        "role": "specialist_challenger"
+      },
+      {
+        "model_id": "PekingU/rtdetr_v2_r50vd",
+        "revision": "282494075698cab9faa1096ae26856890030c817",
+        "role": "transformer_baseline"
+      }
+    ],
+    "benchmark_policy": "same_frozen_images_annotations_order_and_selection_sha256"
+  },
+  "entrypoints": [
+    {
+      "name": "dfine_fire_smoke_train",
+      "working_directory": "<FIREVIEWER_AI_WORKER_REPOSITORY>",
+      "command": "python -m training.train_dfine train --profile media_filter_v1 --manifest <TRAIN_BUNDLE_ROOT>/corpus/fasdd/manifest.jsonl --manifest <TRAIN_BUNDLE_ROOT>/corpus/pyro-sdis-v0.1.0/manifest.jsonl --manifest <TRAIN_BUNDLE_ROOT>/additional/alarmod-forest-fire/manifest.rtdetr.jsonl --manifest <TRAIN_BUNDLE_ROOT>/sources/boreal-forest-fire-detection-v1/manifest.jsonl --output <OUTPUT_ROOT>/dfine-fire-smoke-v1",
+      "required_manifests": [
+        "corpus/fasdd/manifest.jsonl",
+        "corpus/pyro-sdis-v0.1.0/manifest.jsonl",
+        "additional/alarmod-forest-fire/manifest.rtdetr.jsonl",
+        "sources/boreal-forest-fire-detection-v1/manifest.jsonl"
+      ],
+      "requires_human_gate": true
+    },
+    {
+      "name": "freeze_detector_benchmark",
+      "working_directory": "<FIREVIEWER_AI_WORKER_REPOSITORY>",
+      "command": "python -m training.detector_benchmark freeze --profile media_filter_v1 --manifest <TRAIN_BUNDLE_ROOT>/corpus/fasdd/manifest.jsonl --manifest <TRAIN_BUNDLE_ROOT>/corpus/pyro-sdis-v0.1.0/manifest.jsonl --manifest <TRAIN_BUNDLE_ROOT>/additional/alarmod-forest-fire/manifest.rtdetr.jsonl --manifest <TRAIN_BUNDLE_ROOT>/sources/boreal-forest-fire-detection-v1/manifest.jsonl --selection <OUTPUT_ROOT>/detector-benchmark/selection.json",
+      "required_manifests": [
+        "corpus/fasdd/manifest.jsonl",
+        "corpus/pyro-sdis-v0.1.0/manifest.jsonl",
+        "additional/alarmod-forest-fire/manifest.rtdetr.jsonl",
+        "sources/boreal-forest-fire-detection-v1/manifest.jsonl"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "kind": "train_bundle_subtree",
+      "source_id": "fasdd_v9",
+      "dataset_id": "corpus/fasdd",
+      "bundle_zip": "public/media-filter-fire-smoke-v1.zip",
+      "bundle_train_id": "media-filter-fire-smoke-v1",
+      "bundle_size_bytes": 32772718037,
+      "bundle_sha256": "ed6ee4cf71a2538cfce7b95e6e548528d94b4cea095c8d03ccfc4c0e5ba4c8ae",
+      "subtree": "corpus/fasdd",
+      "mount_path": "corpus/fasdd",
+      "purpose": [
+        "flame_detection",
+        "smoke_detection",
+        "hard_negatives"
+      ],
+      "license": "CC-BY-SA-4.0",
+      "validator": "firewarning_image_manifest"
+    },
+    {
+      "kind": "train_bundle_subtree",
+      "source_id": "pyro_sdis_v0_1_0",
+      "dataset_id": "corpus/pyro-sdis-v0.1.0",
+      "bundle_zip": "public/media-filter-fire-smoke-v1.zip",
+      "bundle_train_id": "media-filter-fire-smoke-v1",
+      "bundle_size_bytes": 32772718037,
+      "bundle_sha256": "ed6ee4cf71a2538cfce7b95e6e548528d94b4cea095c8d03ccfc4c0e5ba4c8ae",
+      "subtree": "corpus/pyro-sdis-v0.1.0",
+      "mount_path": "corpus/pyro-sdis-v0.1.0",
+      "purpose": [
+        "smoke_detection",
+        "fixed_camera_negatives",
+        "france_domain"
+      ],
+      "license": "Apache-2.0",
+      "validator": "firewarning_image_manifest"
+    },
+    {
+      "kind": "train_bundle_subtree",
+      "source_id": "alarmod_forest_fire",
+      "dataset_id": "additional/v1/detection_uav_pointing_v1/alarmod_forest_fire",
+      "bundle_zip": "public/media-filter-fire-smoke-v1.zip",
+      "bundle_train_id": "media-filter-fire-smoke-v1",
+      "bundle_size_bytes": 32772718037,
+      "bundle_sha256": "ed6ee4cf71a2538cfce7b95e6e548528d94b4cea095c8d03ccfc4c0e5ba4c8ae",
+      "subtree": "additional/alarmod-forest-fire",
+      "mount_path": "additional/alarmod-forest-fire",
+      "purpose": [
+        "uav_fire_detection",
+        "uav_domain_evaluation"
+      ],
+      "license": "GPL-3.0",
+      "validator": "firewarning_image_manifest"
+    },
+    {
+      "kind": "train_bundle_subtree",
+      "source_id": "boreal_forest_fire_detection_v1",
+      "dataset_id": "sources/boreal-forest-fire-detection-v1",
+      "bundle_zip": "public/wildfire-smoke-detection-v1.zip",
+      "bundle_train_id": "wildfire-smoke-detection-v1",
+      "bundle_size_bytes": 13518198597,
+      "bundle_sha256": "27abdbe3d3703d9c6fa67bfde136088845726313e148644eb0e948f9a6211e13",
+      "subtree": "sources/boreal-forest-fire-detection-v1",
+      "mount_path": "sources/boreal-forest-fire-detection-v1",
+      "purpose": [
+        "wildfire_smoke_detection",
+        "boreal_outdoor_domain"
+      ],
+      "license": "CC-BY-4.0",
+      "transformer": "boreal_yolo_to_firewarning_detection_v1",
+      "validator": "firewarning_image_manifest"
+    }
+  ],
+  "excluded_evaluation_sets": [
+    "detector_critical_test",
+    "synthetic-operational-evaluation-v0.1.0",
+    "operational-reference-b-operational-reference-v1.0.0"
+  ]
+}

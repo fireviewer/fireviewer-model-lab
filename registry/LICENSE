@@ -1,0 +1,23 @@
+FireViewer Models index — repository content licence
+
+Copyright 2026 FireViewer contributors.
+
+Unless a file states otherwise, the original documentation and registry metadata
+contained in this GitHub repository are licensed under the Creative Commons
+Attribution 4.0 International licence (CC BY 4.0):
+
+https://creativecommons.org/licenses/by/4.0/
+
+You may share and adapt this repository's original documentation and registry
+metadata, including for commercial purposes, provided that appropriate credit is
+given, a link to the licence is supplied, and changes are indicated.
+
+This licence does NOT relicense any model weights, model cards copied from other
+repositories, training or evaluation datasets, upstream source assets, base
+models, third-party software, trademarks or external data referenced by this
+index. Those materials retain the licences and terms stated by their canonical
+repositories and rights holders.
+
+The machine-readable registries in `registry/` are descriptive indexes of
+FireViewer resources. A registry entry does not grant rights to the referenced
+artifact and must not be interpreted as overriding its canonical licence.

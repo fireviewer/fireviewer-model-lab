@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "train_id": "media-filter-fire-smoke-v1",
+  "training_ready": true,
+  "entrypoints": [
+    {
+      "name": "rtdetr_media_filter_v1",
+      "working_directory": "<FIREVIEWER_AI_WORKER_REPOSITORY>",
+      "command": "python -m training.train_rtdetr train --profile media_filter_v1 --manifest <TRAIN_BUNDLE_ROOT>/corpus/fasdd/manifest.jsonl --manifest <TRAIN_BUNDLE_ROOT>/corpus/pyro-sdis-v0.1.0/manifest.jsonl --manifest <TRAIN_BUNDLE_ROOT>/additional/alarmod-forest-fire/manifest.jsonl --output <OUTPUT_ROOT>/rtdetr-media-filter-v1",
+      "required_manifests": [
+        "corpus/fasdd/manifest.jsonl",
+        "corpus/pyro-sdis-v0.1.0/manifest.jsonl",
+        "additional/alarmod-forest-fire/manifest.jsonl"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "fasdd_v9",
+      "dataset_id": "corpus/fasdd",
+      "archive_manifest": "datasets/corpus/fasdd/manifest.json",
+      "mount_path": "corpus/fasdd",
+      "purpose": ["flame_detection", "smoke_detection", "hard_negatives"],
+      "license": "CC-BY-SA-4.0",
+      "validator": "firewarning_image_manifest"
+    },
+    {
+      "source_id": "pyro_sdis_v0_1_0",
+      "dataset_id": "corpus/pyro-sdis-v0.1.0",
+      "archive_manifest": "datasets/corpus/pyro-sdis-v0.1.0/manifest.json",
+      "mount_path": "corpus/pyro-sdis-v0.1.0",
+      "purpose": ["smoke_detection", "fixed_camera_negatives", "france_domain"],
+      "license": "Apache-2.0",
+      "validator": "firewarning_image_manifest"
+    },
+    {
+      "source_id": "alarmod_forest_fire",
+      "dataset_id": "additional/v1/detection_uav_pointing_v1/alarmod_forest_fire",
+      "archive_manifest": "additional/v1/detection_uav_pointing_v1/alarmod_forest_fire/manifest.json",
+      "mount_path": "additional/alarmod-forest-fire",
+      "purpose": ["uav_fire_detection", "visible_fire_pointing", "uav_domain_evaluation"],
+      "license": "GPL-3.0",
+      "transformer": "alarmod_to_firewarning_detection_v1",
+      "validator": "firewarning_image_manifest"
+    }
+  ],
+  "excluded_evaluation_sets": [
+    "detector_critical_test",
+    "fire-pointing-critical-v0.1.0",
+    "synthetic-operational-evaluation-v0.1.0",
+    "operational-reference-b-operational-reference-v1.0.0"
+  ]
+}

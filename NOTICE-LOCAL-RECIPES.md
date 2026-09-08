@@ -1,0 +1,1 @@
+Recipes under src/fireviewer_model_lab/recipes come from the inventoried fireviewermodel/training local working area. Existing file headers are preserved. No absent licence declaration is replaced by an assumed rights transfer. Keep this extraction private until the rights annex is signed. Vendor model implementations and all payloads are excluded.

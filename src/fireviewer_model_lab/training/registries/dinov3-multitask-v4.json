@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "campaign_id": "fireviewer-dinov3-multitask-v4",
+  "status": "superseded_do_not_run_or_publish",
+  "superseded_by": "training/registries/dinov3-multitask-composition-v1.json",
+  "publication_allowed": false,
+  "target_dataset": "fireviewer/dinov3-multitask-fireviewer-v4-dataset",
+  "private": true,
+  "campaign_root": "data/campaigns/dinov3-multitask-fireviewer-v4",
+  "sources": [
+    {
+      "source_id": "fireviewer-v3-baseline",
+      "repository": "fireviewer/dinov3-multitask-fireviewer-v3-dataset",
+      "revision": "06dad028c4e65fde36f36bb3a97c6fec766a270d",
+      "declared_rows": 1940,
+      "declared_bytes": 590173140,
+      "selection": "all",
+      "split_policy": "preserve_validated_v3_groups",
+      "sample_weight": 4.0
+    },
+    {
+      "source_id": "pyronear-pyro-sdis",
+      "repository": "pyronear/pyro-sdis",
+      "revision": "a1e553ec4d806f71fc6db744cc22bc3469487382",
+      "declared_rows": 33636,
+      "declared_bytes": 3284066553,
+      "selection": "all",
+      "split_policy": "rebuild_by_partner_station_and_temporal_session",
+      "label_policy": "segformer_b2_box_consensus_weak",
+      "sample_weight": 0.5
+    },
+    {
+      "source_id": "hpwren-figlib",
+      "index_url": "https://cdn.hpwren.ucsd.edu/HPWREN-FIgLib-Data/index.html",
+      "declared_sequences": 517,
+      "selection_offsets_seconds": [
+        -2400,
+        -1800,
+        -1200,
+        -600,
+        -300,
+        -120,
+        -60,
+        0,
+        60,
+        120,
+        300,
+        600,
+        1200,
+        1800,
+        2400
+      ],
+      "split_policy": "hold_out_complete_incident_event_groups",
+      "label_policy": "segformer_b2_temporal_consensus_weak",
+      "sample_weight": 1.0
+    },
+    {
+      "source_id": "firestereo-firesgl",
+      "repository": "https://github.com/firestereo/firestereo",
+      "revision": "54cb48b606e4f5b84219931ca6322a70264367ce",
+      "declared_rows": 54015,
+      "selection": "maximum_1500_temporally_spaced_frames_per_sequence",
+      "split_policy": "one_complete_firesgl_sequence_group_per_split",
+      "label_policy": "stereo_thermal_temporal_consensus_weak",
+      "sample_weight": 1.5
+    }
+  ],
+  "teacher": {
+    "repository": "fireviewer/segformer-b2-fire-smoke-baseline-v1",
+    "revision": "f07112018627ada432d71621e7b7cfc68f278911",
+    "held_out_test_iou": 0.7822320466035789,
+    "held_out_test_dice": 0.8778116722727413
+  },
+  "quality_gates": {
+    "require_image_and_mask": true,
+    "require_explicit_abstention": true,
+    "require_split_group_isolation": true,
+    "reject_teacher_only_labels_without_source_or_temporal_consensus": true,
+    "reject_inaccessible_payload_sources": true,
+    "maximum_exact_duplicate_cross_split": 0
+  },
+  "retention": {
+    "delete_archives_after_successful_extraction": true,
+    "delete_local_campaign_after_verified_hf_upload": true,
+    "keep_only_manifests_reports_and_upload_receipt": true
+  }
+}

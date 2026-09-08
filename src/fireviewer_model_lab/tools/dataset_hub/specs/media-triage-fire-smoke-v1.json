@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "train_id": "media-triage-fire-smoke-v1",
+  "training_ready": false,
+  "blocking_reasons": [
+    "triage_classifier_trainer_not_implemented",
+    "independent_double_validated_triage_test_missing"
+  ],
+  "entrypoints": [
+    {
+      "name": "media_triage_preflight",
+      "working_directory": "<FIREVIEWER_AI_WORKER_REPOSITORY>",
+      "command": "python -m training.media_triage preflight --dataset-root <TRAIN_BUNDLE_ROOT>",
+      "required_manifests": [
+        "corpus/fasdd/triage-manifest.jsonl",
+        "corpus/pyro-sdis-v0.1.0/triage-manifest.jsonl"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "kind": "train_bundle_subtree",
+      "source_id": "fasdd_v9",
+      "dataset_id": "corpus/fasdd",
+      "bundle_zip": "public/media-filter-fire-smoke-v1.zip",
+      "bundle_train_id": "media-filter-fire-smoke-v1",
+      "bundle_size_bytes": 32772718037,
+      "bundle_sha256": "ed6ee4cf71a2538cfce7b95e6e548528d94b4cea095c8d03ccfc4c0e5ba4c8ae",
+      "subtree": "corpus/fasdd",
+      "mount_path": "corpus/fasdd",
+      "purpose": [
+        "fire_smoke_normal_image_triage",
+        "hard_negatives"
+      ],
+      "license": "CC-BY-SA-4.0",
+      "transformer": "firewarning_detection_to_image_triage_v1",
+      "validator": "firewarning_image_manifest"
+    },
+    {
+      "kind": "train_bundle_subtree",
+      "source_id": "pyro_sdis_v0_1_0",
+      "dataset_id": "corpus/pyro-sdis-v0.1.0",
+      "bundle_zip": "public/media-filter-fire-smoke-v1.zip",
+      "bundle_train_id": "media-filter-fire-smoke-v1",
+      "bundle_size_bytes": 32772718037,
+      "bundle_sha256": "ed6ee4cf71a2538cfce7b95e6e548528d94b4cea095c8d03ccfc4c0e5ba4c8ae",
+      "subtree": "corpus/pyro-sdis-v0.1.0",
+      "mount_path": "corpus/pyro-sdis-v0.1.0",
+      "purpose": [
+        "france_smoke_normal_image_triage",
+        "fixed_camera_negatives"
+      ],
+      "license": "Apache-2.0",
+      "transformer": "firewarning_detection_to_image_triage_v1",
+      "validator": "firewarning_image_manifest"
+    }
+  ],
+  "bundle_validators": [
+    {
+      "kind": "image_triage_v1",
+      "manifests": [
+        "corpus/fasdd/triage-manifest.jsonl",
+        "corpus/pyro-sdis-v0.1.0/triage-manifest.jsonl"
+      ],
+      "expected_rows": 155044,
+      "expected_split_counts": {
+        "train": 107449,
+        "validation": 23689,
+        "test": 23906
+      },
+      "expected_primary_class_counts": {
+        "fire": 12755,
+        "fire_and_smoke": 27955,
+        "normal": 57294,
+        "smoke": 57040
+      }
+    }
+  ],
+  "excluded_evaluation_sets": [
+    "detector_critical_test",
+    "fire-pointing-critical-v0.1.0",
+    "synthetic-operational-evaluation-v0.1.0",
+    "operational-reference-b-operational-reference-v1.0.0"
+  ]
+}

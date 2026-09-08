@@ -1,0 +1,75 @@
+{
+  "schema": "fireviewer.public-model-registry.v3",
+  "snapshot": {
+    "date": "2026-09-08",
+    "source": "Hugging Face unauthenticated public API",
+    "scope": "publicly visible model resources only"
+  },
+  "canonical_weights_host": "https://huggingface.co/fireviewer",
+  "models": [
+    {
+      "id": "fireviewer/fire-smoke-dfine-m-strict-v1",
+      "visibility": "public",
+      "revision": "0ef733968748c7ac172273db8c381ea5ea5ff046",
+      "last_modified": "2026-09-05T20:26:34Z",
+      "task": "object-detection",
+      "library": "pytorch",
+      "declared_dataset": "fireviewer/fire-smoke-detection-corpus-v1",
+      "public_registry_status": "public_research_candidate",
+      "benchmark_ref": "frozen_external_detection_v1"
+    },
+    {
+      "id": "fireviewer/fire-smoke-rfdetr-medium-v110-strict-v1",
+      "visibility": "public",
+      "revision": "b94fa0b90b2077960d07ff406feefd644844f292",
+      "last_modified": "2026-09-08T03:11:43Z",
+      "task": "object-detection",
+      "library": "rfdetr",
+      "declared_dataset": "fireviewer/fire-smoke-detection-corpus-v1",
+      "public_registry_status": "public_validation_candidate_pending_independent_benchmark",
+      "benchmark_ref": null
+    },
+    {
+      "id": "fireviewer/fire-smoke-yolo11m-strict-v1",
+      "visibility": "public",
+      "revision": "c9ed3ade20b79d27560591fcd592c037ffe9caf3",
+      "last_modified": "2026-09-05T20:25:56Z",
+      "task": "object-detection",
+      "library": "ultralytics",
+      "declared_dataset": "fireviewer/fire-smoke-detection-corpus-v1",
+      "public_registry_status": "public_research_baseline",
+      "benchmark_ref": "frozen_external_detection_v1"
+    },
+    {
+      "id": "fireviewer/rtdetr-v2-r50-fire-smoke",
+      "visibility": "public",
+      "revision": "273e0b37b32aad8c43c1ba5c004b9a7b130974ca",
+      "last_modified": "2026-09-08T03:20:09Z",
+      "task": "object-detection",
+      "library": "transformers",
+      "base_model": "PekingU/rtdetr_v2_r50vd",
+      "declared_dataset": "fireviewer/fire-smoke-detection-corpus-v1",
+      "public_registry_status": "public_conservative_reference",
+      "benchmark_ref": "frozen_external_detection_v1"
+    },
+    {
+      "id": "fireviewer/segformer-b2-fire-smoke-baseline-v1",
+      "visibility": "public",
+      "revision": "9e1418ef700ce06eda9e2ab308520adf4fd0329a",
+      "last_modified": "2026-08-14T04:59:03Z",
+      "task": "image-segmentation",
+      "library": "transformers",
+      "declared_dataset": "fireviewer/segformer-b2-fire-smoke-baseline-v1-dataset",
+      "public_registry_status": "public_segmentation_baseline",
+      "benchmark_ref": null
+    }
+  ],
+  "exclusions": {
+    "not_inferred": [
+      "private resources",
+      "deleted or non-resolving Hub resources",
+      "local checkpoints and experiments",
+      "unqualified cross-task comparisons"
+    ]
+  }
+}

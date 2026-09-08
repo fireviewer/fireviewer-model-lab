@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "train_id": "burned-area-segmentation-v1",
+  "training_ready": true,
+  "promotion_ready": false,
+  "blocking_reasons": [],
+  "promotion_blocking_reasons": [
+    "trained_model_independent_evaluation_missing"
+  ],
+  "contract_revision": "mvp-a40-v2",
+  "model_contract": {
+    "primary": {
+      "model_id": "ibm-nasa-geospatial/Prithvi-EO-2.0-300M-BurnScars",
+      "revision": "a3f2c410e45b8ac7417976614528a872f024d831",
+      "role": "burnscar_primary"
+    },
+    "challenger": {
+      "model_id": "ibm-esa-geospatial/TerraMind-base-Fire",
+      "revision": "6eb5178aac4f8a4191796258ae26e796195cc00d",
+      "role": "benchmark_only",
+      "required_modalities": [
+        "S2L2A",
+        "S1RTC",
+        "DEM"
+      ]
+    }
+  },
+  "geographic_critical_test": {
+    "dataset_id": "prithvi-geographic-critical-test-v1",
+    "source_dataset": "AUA-Informatics-Lab/eo4wildfires",
+    "source_revision": "d194cca045aa6b0dc0e53b0ee45573324efa5c4f",
+    "source_split": "test",
+    "license": "CC-BY-SA-4.0",
+    "materialization_status": "complete",
+    "validation_policy": "dual_automated_official_source_v1",
+    "automated_validation_status": "complete",
+    "human_review_policy": "anomalies_only",
+    "sample_count": 100,
+    "event_count": 100,
+    "site_count": 70,
+    "manifest_sha256": "ebb7b0923efe558672f35a7b81d8e88309e6970ea9f085e11afb3b2879b272d3b",
+    "selection_sha256": "9e16f3bba0f2987b51927b92260b89afe41b78395a5ac6975cf3ab1c76a7920e"
+  },
+  "entrypoints": [
+    {
+      "name": "prithvi_burnscars_preflight",
+      "working_directory": "<FIREVIEWER_AI_WORKER_REPOSITORY>",
+      "command": "python -m training.train_prithvi_burnscars preflight --dataset-root <TRAIN_BUNDLE_ROOT>/materialized --output <OUTPUT_ROOT>/prithvi-burnscars",
+      "required_manifests": [
+        "materialized/materialization-report.json",
+        "materialized/splits/train.txt",
+        "materialized/splits/validation.txt",
+        "materialized/splits/test.txt"
+      ]
+    },
+    {
+      "name": "prithvi_burnscars_train",
+      "working_directory": "<FIREVIEWER_AI_WORKER_REPOSITORY>",
+      "command": "python -m training.train_prithvi_burnscars train --dataset-root <TRAIN_BUNDLE_ROOT>/materialized --output <OUTPUT_ROOT>/prithvi-burnscars --confirm-training",
+      "requires_human_gate": true
+    }
+  ],
+  "sources": [
+    {
+      "kind": "materialized_directory",
+      "source_id": "prithvi_burnscars_materialized_v1",
+      "dataset_id": "training-inputs/prithvi-burnscars-v1-materialized",
+      "mount_path": "materialized",
+      "purpose": [
+        "burned_area_binary_segmentation",
+        "hls_multispectral",
+        "eo4wildfires_sentinel2"
+      ],
+      "licenses": {
+        "hls": "CC-BY-4.0",
+        "eo4wildfires": "CC-BY-SA-4.0"
+      },
+      "expected_samples": 32534,
+      "expected_source_counts": {
+        "hls": 804,
+        "eo4": 31730
+      },
+      "expected_files": 65072,
+      "validator": "prithvi_materialized_v1"
+    }
+  ],
+  "excluded_evaluation_sets": [
+    "la-fire-jan-2025",
+    "synthetic-operational-evaluation-v0.1.0",
+    "operational-reference-b-operational-reference-v1.0.0"
+  ]
+}

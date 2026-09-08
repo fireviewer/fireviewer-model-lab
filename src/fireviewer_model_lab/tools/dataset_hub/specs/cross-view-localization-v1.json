@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "train_id": "cross-view-localization-v1",
+  "training_ready": false,
+  "blocking_reasons": [
+    "congeo_trainer_not_implemented",
+    "plgeo_trainer_not_implemented",
+    "france_rural_mountain_adapter_not_integrated_in_trainer",
+    "independent_double_validated_geographic_test_missing"
+  ],
+  "contract_revision": "mvp-a40-v2",
+  "model_contract": {
+    "primary": {
+      "model_id": "eceo-epfl/ConGeo",
+      "source_repository": "https://github.com/eceo-epfl/ConGeo",
+      "revision": "52ab846f44f54231bb5828a5e3dd8137b2fed06d",
+      "role": "cross_view_coarse_primary"
+    },
+    "challenger": {
+      "model_id": "1203ll/PLGeo",
+      "source_repository": "https://github.com/1203ll/PLGeo",
+      "revision": "10338027c50ab2a10c7990c07efed9582e604504",
+      "role": "cross_view_coarse_challenger"
+    },
+    "retired_prototype": {
+      "name": "DINOv2 coarse cross-view prototype",
+      "executable": false
+    }
+  },
+  "entrypoints": [
+    {
+      "name": "congeo_cross_view_pending",
+      "command": null,
+      "required_manifests": [
+        "corpus/cross-view-coarse-localizer-v0.1.0/train.jsonl",
+        "corpus/cross-view-coarse-localizer-v0.1.0/validation.jsonl"
+      ],
+      "blocked_until": [
+        "congeo_trainer_not_implemented",
+        "independent_double_validated_geographic_test_missing"
+      ]
+    },
+    {
+      "name": "plgeo_cross_view_pending",
+      "command": null,
+      "required_manifests": [
+        "corpus/cross-view-coarse-localizer-v0.1.0/train.jsonl",
+        "corpus/cross-view-coarse-localizer-v0.1.0/validation.jsonl"
+      ],
+      "blocked_until": [
+        "plgeo_trainer_not_implemented",
+        "independent_double_validated_geographic_test_missing"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "justzoomin_selective_v1",
+      "dataset_id": "sources/justzoomin-selective",
+      "archive_manifest": "datasets/sources/justzoomin-selective/manifest.json",
+      "mount_path": "sources/justzoomin-selective",
+      "purpose": ["coarse_cross_view_bootstrap"],
+      "license": "CC-BY-SA-4.0",
+      "validator": "archive_only"
+    },
+    {
+      "source_id": "cross_view_coarse_localizer_v0_1_0",
+      "dataset_id": "corpus/cross-view-coarse-localizer-v0.1.0",
+      "archive_manifest": "datasets/corpus/cross-view-coarse-localizer-v0.1.0/manifest.json",
+      "mount_path": "corpus/cross-view-coarse-localizer-v0.1.0",
+      "purpose": ["coarse_cross_view_train_and_validation_manifests"],
+      "license": "mixed-see-source-metadata",
+      "validator": "archive_only"
+    },
+    {
+      "source_id": "streetview_global_context_v1",
+      "dataset_id": "corpus/streetview-global-context-v1",
+      "archive_manifest": "datasets/corpus/streetview-global-context-v1/manifest.json",
+      "mount_path": "corpus/streetview-global-context-v1",
+      "purpose": ["rural_forest_mountain_context_weak_supervision"],
+      "license": "CC-BY-SA-4.0",
+      "validator": "firewarning_image_manifest"
+    },
+    {
+      "source_id": "aerialextrematch_localization",
+      "dataset_id": "sources/aerialextrematch-localization",
+      "archive_manifest": "datasets/sources/aerialextrematch-localization/manifest.json",
+      "mount_path": "sources/aerialextrematch-localization",
+      "purpose": ["dense_matching", "pose_and_pnp_benchmark"],
+      "license": "MIT",
+      "validator": "archive_only"
+    },
+    {
+      "source_id": "odm_cross_view",
+      "dataset_id": "sources/odm-cross-view",
+      "archive_manifest": "datasets/sources/odm-cross-view/manifest.json",
+      "mount_path": "sources/odm-cross-view",
+      "purpose": ["aerial_to_overhead_rural_mountain_adaptation"],
+      "license": "see-source-metadata",
+      "validator": "archive_only"
+    }
+  ],
+  "excluded_evaluation_sets": [
+    "cross-view-registration-critical-v0.1.0",
+    "aerialextrematch-roma-v1",
+    "synthetic-operational-evaluation-v0.1.0",
+    "operational-reference-b-operational-reference-v1.0.0"
+  ]
+}

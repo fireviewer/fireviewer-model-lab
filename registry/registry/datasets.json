@@ -1,0 +1,70 @@
+{
+  "schema": "fireviewer.public-dataset-registry.v4",
+  "snapshot": {
+    "date": "2026-09-08",
+    "source": "Hugging Face unauthenticated public API",
+    "scope": "publicly visible dataset resources only"
+  },
+  "datasets": [
+    {
+      "id": "fireviewer/dataset-from-simulations",
+      "revision": "71664807b9bb20812a5d423f4dc7de2614436fbc",
+      "last_modified": "2026-08-14T04:48:34Z",
+      "title": "FireViewer Dataset from Simulations",
+      "registry_status": "synthetic_research_resource",
+      "task_categories": ["synthetic-data", "geospatial"],
+      "tags": ["omniverse", "openusd", "wildfire", "geospatial"]
+    },
+    {
+      "id": "fireviewer/dinov3-cross-view-fireviewer-v1-dataset",
+      "revision": "d4e6a78739a8e0a8efc3d9635f1bc64551911034",
+      "registry_status": "public_research_resource",
+      "task_categories": ["image-segmentation", "image-to-image"],
+      "tags": ["cross-view", "dinov3", "segmentation"]
+    },
+    {
+      "id": "fireviewer/fire-smoke-detection-corpus-v1",
+      "revision": "b45f08eb8cfb8636abe64002e95ad0548c9cfe8f",
+      "last_modified": "2026-09-08T03:20:12Z",
+      "registry_status": "active_detection_corpus_authority",
+      "validated_rows": 102257,
+      "task_categories": ["object-detection"],
+      "tags": ["fire", "smoke", "wildfire", "strict", "automated-validation"]
+    },
+    {
+      "id": "fireviewer/firewarning-train-bundles-v1",
+      "revision": "3207a080f786e3349349759af34385e3d892b4e5",
+      "last_modified": "2026-08-30T14:05:42Z",
+      "registry_status": "public_historical_archive",
+      "task_categories": ["object-detection", "image-segmentation", "text", "visual-question-answering"]
+    },
+    {
+      "id": "fireviewer/firewarning-training-corpus",
+      "revision": "8528ee1f4a62090d73f966f0fa5c2a721aee8b9d",
+      "last_modified": "2026-08-30T14:04:40Z",
+      "registry_status": "public_provenance_evaluation_reference",
+      "task_categories": ["object-detection", "image-segmentation"]
+    },
+    {
+      "id": "fireviewer/prithvi-burnscars-training-dataset-v1",
+      "revision": "5a1f6006002000aea031c261daf807ea1500c762",
+      "last_modified": "2026-08-14T04:48:37Z",
+      "registry_status": "public_burn_scar_research_dataset",
+      "task_categories": ["image-segmentation", "remote-sensing"]
+    },
+    {
+      "id": "fireviewer/simple-measured-scenes-v1",
+      "revision": "ee102e37fdbb752787fe8988c4d200272aa446e8",
+      "last_modified": "2026-09-01T21:24:17Z",
+      "registry_status": "public_measured_map_resource",
+      "task_categories": ["3d", "geospatial"],
+      "tags": ["measured-scenes", "geospatial", "3d"]
+    }
+  ],
+  "exclusions": [
+    "private datasets",
+    "deleted or non-resolving Hub datasets",
+    "unverified source-rights claims",
+    "implicit training-suitability claims"
+  ]
+}

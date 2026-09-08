@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "train_id": "cross-view-registration-v1",
+  "training_ready": false,
+  "blocking_reasons": [
+    "official_roma_checkpoint_quality_gate_failed",
+    "independent_double_validated_geographic_test_missing",
+    "fine_tuning_contract_not_implemented"
+  ],
+  "entrypoints": [
+    {
+      "name": "roma_registration_preflight",
+      "working_directory": "<FIREVIEWER_AI_WORKER_REPOSITORY>",
+      "command": "python -m training.spatial_register_roma preflight --dataset-root <TRAIN_BUNDLE_ROOT>",
+      "required_manifests": [
+        "corpus/cross-view-registration-v0.1.0/manifest.jsonl"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "cross_view_registration_v0_1_0",
+      "dataset_id": "corpus/cross-view-registration-v0.1.0",
+      "archive_manifest": "remote/datasets/corpus/cross-view-registration-v0.1.0/manifest.json",
+      "mount_path": "corpus/cross-view-registration-v0.1.0",
+      "purpose": [
+        "camera_pose_supervision",
+        "optical_axis_ground_truth",
+        "map_crop_targets"
+      ],
+      "license": "mixed-see-source-metadata",
+      "validator": "archive_only"
+    },
+    {
+      "kind": "train_bundle_subtree",
+      "source_id": "aerialextrematch_localization",
+      "dataset_id": "sources/aerialextrematch-localization",
+      "bundle_zip": "public/cross-view-localization-v1.zip",
+      "bundle_train_id": "cross-view-localization-v1",
+      "bundle_size_bytes": 15895751194,
+      "bundle_sha256": "5f5e14083da209bd978117e2c7470f8f63decdb4ba3223914da7e7164aa64f5f",
+      "subtree": "sources/aerialextrematch-localization",
+      "mount_path": "sources/aerialextrematch-localization",
+      "purpose": [
+        "source_images",
+        "camera_pose",
+        "dom_dsm_reference"
+      ],
+      "license": "MIT"
+    },
+    {
+      "kind": "train_bundle_subtree",
+      "source_id": "odm_cross_view",
+      "dataset_id": "sources/odm-cross-view",
+      "bundle_zip": "public/cross-view-localization-v1.zip",
+      "bundle_train_id": "cross-view-localization-v1",
+      "bundle_size_bytes": 15895751194,
+      "bundle_sha256": "5f5e14083da209bd978117e2c7470f8f63decdb4ba3223914da7e7164aa64f5f",
+      "subtree": "sources/odm-cross-view",
+      "mount_path": "sources/odm-cross-view",
+      "purpose": [
+        "france_rural_mountain_adaptation",
+        "source_images",
+        "geotag_footprint_supervision"
+      ],
+      "license": "see-source-metadata"
+    }
+  ],
+  "bundle_validators": [
+    {
+      "kind": "cross_view_registration_v1",
+      "manifest": "corpus/cross-view-registration-v0.1.0/manifest.jsonl",
+      "expected_rows": 390,
+      "expected_split_counts": {
+        "train": 288,
+        "validation": 57,
+        "test": 45
+      }
+    }
+  ],
+  "excluded_evaluation_sets": [
+    "cross-view-registration-critical-v0.1.0",
+    "aerialextrematch-roma-v1",
+    "synthetic-private-evaluation-v0.1.0",
+    "operational-reference-b-operational-reference-v1.0.0"
+  ]
+}

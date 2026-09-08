@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "campaign_id": "fireviewer-dinov3-dataset-complements-v1",
+  "baseline_datasets": {
+    "multitask": {
+      "repository": "fireviewer/dinov3-multitask-fireviewer-v3-dataset",
+      "rows": 1940,
+      "known_limitations": [
+        "only_40_human_strong_rows",
+        "only_13_split_groups",
+        "no_operational_incident"
+      ]
+    },
+    "cross_view": {
+      "repository": "fireviewer/dinov3-cross-view-fireviewer-v1-dataset",
+      "rows": 7890,
+      "known_limitations": [
+        "wildfire3data_absent",
+        "camp_swift_camera_positions_unknown",
+        "no_independent_metric_geographic_test"
+      ]
+    }
+  },
+  "campaign_policy": {
+    "reuse_existing_hf_payloads": true,
+    "download_only_missing_sources": true,
+    "archive_retention": "delete_after_successful_extraction_and_inventory",
+    "raw_redistribution": "only_when_explicitly_permitted_by_upstream",
+    "execute_upstream_dataset_code": false,
+    "split_unit_priority": [
+      "incident",
+      "burn_site",
+      "flight",
+      "camera",
+      "sequence"
+    ],
+    "forbid_temporally_adjacent_cross_split_frames": true,
+    "forbid_teacher_only_promotion_to_human_strong": true
+  },
+  "sources": [
+    {
+      "source_id": "wit-uas",
+      "name": "WIT-UAS",
+      "official_repository": "https://github.com/castacks/WIT-UAS-Dataset",
+      "repository_revision": "da0731a2e4e6036c178be6b6e8ac633f2780097b",
+      "upstream_archives": [
+        "WIT-UAV-Dataset.zip",
+        "WIT-UAV-Dataset_split.zip"
+      ],
+      "declared_images": 6951,
+      "burn_sites": [
+        "SGL-174-Rossiter-2021",
+        "SGL-111-Confluence-2022",
+        "SGL-42-Reade-2022"
+      ],
+      "modalities": [
+        "lwir",
+        "rgb_partial",
+        "gps",
+        "imu",
+        "uas_odometry",
+        "telemetry"
+      ],
+      "provided_annotations": [
+        "person_boxes",
+        "vehicle_boxes"
+      ],
+      "acquisition": {
+        "strategy": "isolated_official_minio_client",
+        "status": "official_server_unreachable",
+        "mirror_raw": false,
+        "requires_upstream_client_dependency": true
+      },
+      "multitask_role": {
+        "status": "candidate_after_derived_annotation",
+        "derived_labeler": "training.wit_fire_labels",
+        "uses": [
+          "thermal_fire_mask",
+          "fire_base_point",
+          "hard_occlusion_examples",
+          "asset_exclusion_regions"
+        ],
+        "annotation_recipe": [
+          "decode_absolute_temperature_when_seek_sensor_is_available",
+          "exclude_person_and_vehicle_boxes_with_safety_margin",
+          "require_temporal_component_persistence",
+          "require_teacher_or_cross_sensor_consensus",
+          "derive_fire_base_from_lowest_stable_component_boundary",
+          "mark_unresolved_frames_as_abstention"
+        ],
+        "quality": "sensor_derived_weak"
+      },
+      "cross_view_role": {
+        "status": "validation_only",
+        "uses": [
+          "approximate_vantage_retrieval",
+          "thermal_smoke_robustness"
+        ],
+        "geometry_limitations": [
+          "ros_timestamp_not_hardware_synchronised",
+          "unsuitable_for_precise_mapping",
+          "approximate_pose_only"
+        ]
+      },
+      "split_policy": "hold_out_complete_burn_site_and_flight_groups",
+      "blockers": [
+        "official_minio_endpoint_connection_timeout_on_2026_08_03",
+        "no_upstream_fire_or_smoke_masks",
+        "upstream_image_split_contains_temporally_adjacent_frames",
+        "redistribution_terms_not_stated_in_repository"
+      ]
+    },
+    {
+      "source_id": "firestereo-firesgl",
+      "name": "FIReStereo FiresGL subset",
+      "official_repository": "https://github.com/firestereo/firestereo",
+      "official_page": "https://firestereo.github.io/",
+      "repository_revision": "54cb48b606e4f5b84219931ca6322a70264367ce",
+      "declared_images": 54015,
+      "declared_sequences": 3,
+      "modalities": [
+        "stereo_thermal_8bit",
+        "stereo_calibration"
+      ],
+      "stereo_baseline_m": 0.246,
+      "assets": [
+        {
+          "sequence_group": "firesgl-1",
+          "filename": "firesgl_1.zip",
+          "url": "https://airlab-cloud.andrew.cmu.edu:8080/swift/v1/AUTH_ac8533a83cff4d48bc8c608ad222d330/firestereo/stereo_thermal/firesgl_1.zip",
+          "expected_bytes": 8934102218
+        },
+        {
+          "sequence_group": "firesgl-2",
+          "filename": "firesgl_2_1.zip",
+          "url": "https://airlab-cloud.andrew.cmu.edu:8080/swift/v1/AUTH_ac8533a83cff4d48bc8c608ad222d330/firestereo/stereo_thermal/firesgl_2_1.zip",
+          "expected_bytes": 4326083032
+        },
+        {
+          "sequence_group": "firesgl-2",
+          "filename": "firesgl_2_2.zip",
+          "url": "https://airlab-cloud.andrew.cmu.edu:8080/swift/v1/AUTH_ac8533a83cff4d48bc8c608ad222d330/firestereo/stereo_thermal/firesgl_2_2.zip",
+          "expected_bytes": 13876143131
+        },
+        {
+          "sequence_group": "firesgl-2",
+          "filename": "firesgl_2_3.zip",
+          "url": "https://airlab-cloud.andrew.cmu.edu:8080/swift/v1/AUTH_ac8533a83cff4d48bc8c608ad222d330/firestereo/stereo_thermal/firesgl_2_3.zip",
+          "expected_bytes": 14978138280
+        },
+        {
+          "sequence_group": "firesgl-3",
+          "filename": "firesgl_3_1.zip",
+          "url": "https://airlab-cloud.andrew.cmu.edu:8080/swift/v1/AUTH_ac8533a83cff4d48bc8c608ad222d330/firestereo/stereo_thermal/firesgl_3_1.zip",
+          "expected_bytes": 1500501766
+        }
+      ],
+      "acquisition": {
+        "strategy": "resumable_direct_http",
+        "status": "ready",
+        "mirror_raw": false,
+        "archive_bytes": 43614968427
+      },
+      "multitask_role": {
+        "status": "candidate_after_derived_annotation",
+        "uses": [
+          "thermal_fire_mask",
+          "fire_base_point",
+          "ember_and_dense_smoke_hard_cases"
+        ],
+        "annotation_recipe": [
+          "sample_by_sequence_and_time_not_by_frame",
+          "require_left_right_component_consistency",
+          "require_temporal_component_persistence",
+          "require_teacher_consensus",
+          "derive_fire_base_from_lowest_stable_component_boundary",
+          "mark_unresolved_frames_as_abstention"
+        ],
+        "quality": "sensor_stereo_derived_weak"
+      },
+      "cross_view_role": {
+        "status": "robustness_validation_only",
+        "uses": [
+          "synchronised_stereo_correspondence_under_fire_and_smoke",
+          "transient_mask_validation"
+        ],
+        "geometry_limitations": [
+          "small_24_6_cm_baseline",
+          "firesgl_depth_not_provided",
+          "firesgl_odometry_not_provided",
+          "not_a_geographic_retrieval_target"
+        ]
+      },
+      "split_policy": "never_split_archives_from_same_sequence_group",
+      "sampling_policy": {
+        "maximum_selected_frames_per_sequence": 1500,
+        "minimum_temporal_spacing_seconds": 1.0,
+        "retain_full_sequence_only_for_offline_validation": true
+      },
+      "blockers": [
+        "no_upstream_fire_or_smoke_masks",
+        "single_prescribed_fire_campaign_may_limit_incident_independence",
+        "redistribution_terms_not_stated_in_repository"
+      ]
+    },
+    {
+      "source_id": "pyronear-pyro-sdis-sdis77",
+      "name": "Pyro-SDIS SDIS 77 and Fontainebleau-facing cameras",
+      "official_repository": "https://huggingface.co/datasets/pyronear/pyro-sdis",
+      "repository_revision": "a1e553ec4d806f71fc6db744cc22bc3469487382",
+      "modalities": [
+        "fixed_camera_rgb"
+      ],
+      "provided_annotations": [
+        "smoke_boxes",
+        "camera_id",
+        "partner_id",
+        "capture_date"
+      ],
+      "acquisition": {
+        "strategy": "reuse_existing_fireviewer_detection_corpus",
+        "status": "ready_without_new_raw_download",
+        "mirror_raw": false,
+        "upstream_sequence_indexes": [
+          {
+            "path": "experiments/temporal-models/temporal-model-explorer/data/03_primary/sequences/sdis-77.dvc",
+            "declared_bytes": 635480616,
+            "declared_files": 5350,
+            "payload_access": "private_s3_403"
+          },
+          {
+            "path": "experiments/temporal-models/temporal-model-leaderboard/data/01_raw/pyro_annotator_exports/sdis-77-new_model.dvc",
+            "declared_bytes": 1378563319,
+            "declared_files": 12861,
+            "payload_access": "private_s3_403"
+          }
+        ]
+      },
+      "multitask_role": {
+        "status": "candidate_after_derived_annotation",
+        "uses": [
+          "smoke_column_mask",
+          "smoke_column_base_point",
+          "distant_smoke_abstention"
+        ],
+        "annotation_recipe": [
+          "filter_partner_sdis77_and_relevant_camera_groups",
+          "group_by_camera_and_capture_date",
+          "seed_segmentation_from_source_box",
+          "require_temporal_or_teacher_consensus",
+          "derive_smoke_column_base_from_lowest_stable_mask_boundary"
+        ],
+        "quality": "box_guided_weak"
+      },
+      "cross_view_role": {
+        "status": "not_admitted_without_same_incident_multi_station_metadata"
+      },
+      "split_policy": "hold_out_complete_camera_and_incident_date_groups",
+      "blockers": [
+        "published_data_contains_boxes_not_masks",
+        "public_sdis77_dvc_indexes_reference_private_s3_payloads",
+        "fontainebleau_drone_incident_archive_not_found_in_public_pyronear_repositories"
+      ]
+    },
+    {
+      "source_id": "hpwren-figlib",
+      "name": "HPWREN Fire Ignition image Library",
+      "official_page": "https://www.hpwren.ucsd.edu/FIgLib/",
+      "indexed_sequences": 517,
+      "indexed_event_groups": 302,
+      "indexed_multi_camera_events": 110,
+      "indexed_cross_view_candidate_sequences": 324,
+      "declared_archive_bytes_approx": 32212254720,
+      "modalities": [
+        "fixed_camera_rgb",
+        "fixed_camera_monochrome",
+        "timelapse"
+      ],
+      "provided_annotations": [
+        "visible_smoke_onset_time",
+        "camera_id",
+        "incident_id"
+      ],
+      "assets": [
+        {
+          "sequence_group": "figlib-2016-2020",
+          "filename": "hpwren-figlib.zip",
+          "url": "https://s3-west.nrp-nautilus.io/ndp/hpwren-figlib.zip",
+          "expected_bytes": 12020094336
+        }
+      ],
+      "mirror_catalog": "https://nationaldataplatform.org/catalog/dataset/hpwrens-fire-ignition-image-library-figlib-2016-2020-and-classification-results",
+      "acquisition": {
+        "strategy": "resumable_direct_http",
+        "status": "ready",
+        "mirror_raw": false
+      },
+      "multitask_role": {
+        "status": "candidate_after_derived_annotation",
+        "uses": [
+          "smoke_column_base_point",
+          "pre_ignition_abstention",
+          "temporal_smoke_onset"
+        ],
+        "quality": "onset_supervised_and_teacher_derived_weak"
+      },
+      "cross_view_role": {
+        "status": "candidate_only_for_same_incident_multi_camera_sequences"
+      },
+      "split_policy": "hold_out_complete_incidents_and_cameras",
+      "blockers": [
+        "public_archive_has_onset_labels_but_not_pixel_masks",
+        "multi_camera_event_associations_require_indexing"
+      ]
+    },
+    {
+      "source_id": "alert-camera-networks",
+      "name": "ALERTWildfire and AlertWest camera networks",
+      "official_page": "https://www.alertwildfire.org/",
+      "modalities": [
+        "ptz_camera_rgb",
+        "camera_geolocation",
+        "camera_azimuth"
+      ],
+      "acquisition": {
+        "strategy": "approved_archives_and_public_api_metadata_only",
+        "status": "metadata_discovery",
+        "mirror_raw": false,
+        "forbid_live_feed_scraping": true
+      },
+      "multitask_role": {
+        "status": "candidate_when_incident_archives_are_available",
+        "uses": [
+          "distant_smoke",
+          "weather_and_cloud_hard_negatives",
+          "long_range_abstention"
+        ]
+      },
+      "cross_view_role": {
+        "status": "candidate_when_same_incident_is_observed_by_multiple_geolocated_cameras"
+      },
+      "split_policy": "hold_out_complete_incidents_and_camera_stations",
+      "blockers": [
+        "live_network_is_not_a_frozen_training_dataset",
+        "historical_incident_archive_access_must_be_confirmed"
+      ]
+    },
+    {
+      "source_id": "pyronear-fontainebleau-drone",
+      "name": "Pyronear Fontainebleau full-incident drone imagery",
+      "acquisition": {
+        "strategy": "upstream_archive_discovery",
+        "status": "not_publicly_located",
+        "mirror_raw": false
+      },
+      "multitask_role": {
+        "status": "high_priority_when_located"
+      },
+      "cross_view_role": {
+        "status": "high_priority_when_camera_metadata_and_multiple_vantages_are_present"
+      },
+      "split_policy": "reserve_complete_incident_as_independent_test_until_additional_incidents_exist",
+      "blockers": [
+        "no_public_archive_or_hugging_face_repository_located"
+      ]
+    },
+    {
+      "source_id": "wildfire3data",
+      "name": "Wildfire3Data",
+      "acquisition": {
+        "strategy": "official_release_discovery",
+        "status": "release_not_located",
+        "mirror_raw": false
+      },
+      "multitask_role": {
+        "status": "not_primary"
+      },
+      "cross_view_role": {
+        "status": "primary_when_official_release_is_available"
+      },
+      "split_policy": "preserve_official_scene_split_then_hold_out_complete_scenes",
+      "blockers": [
+        "official_download_not_located"
+      ]
+    }
+  ]
+}

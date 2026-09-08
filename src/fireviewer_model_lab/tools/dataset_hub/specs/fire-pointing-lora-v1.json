@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "train_id": "fire-pointing-lora-v1",
+  "training_ready": false,
+  "blocking_reasons": [
+    "molmopoint_trainer_not_implemented",
+    "weak_supervision_only",
+    "double_validated_pixel_ground_truth_missing"
+  ],
+  "contract_revision": "mvp-a40-v2",
+  "model_contract": {
+    "primary": {
+      "model_id": "allenai/MolmoPoint-8B",
+      "revision": "188130f961c8e0888a34e11121a1423c461a01ba",
+      "role": "pointing_model"
+    },
+    "baseline": {
+      "model_id": "microsoft/Florence-2-large-ft",
+      "revision": "4a12a2b54b7016a48a22037fbd62da90cd566f2a",
+      "role": "pointing_baseline"
+    },
+    "verifier": {
+      "model_id": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "role": "verifier_only",
+      "coordinate_authority": false
+    }
+  },
+  "entrypoints": [
+    {
+      "name": "molmopoint_fire_pointing_pending",
+      "command": null,
+      "required_manifests": [
+        "corpus/fire-pointing-v0.1.0/manifest.jsonl"
+      ],
+      "blocked_until": [
+        "molmopoint_trainer_not_implemented",
+        "double_validated_pixel_ground_truth_missing"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "fire_pointing_v0_1_0",
+      "dataset_id": "corpus/fire-pointing-v0.1.0",
+      "archive_manifest": "datasets/corpus/fire-pointing-v0.1.0/manifest.json",
+      "mount_path": "corpus/fire-pointing-v0.1.0",
+      "purpose": ["weak_pointing_annotations"],
+      "license": "derived-see-source-manifests",
+      "validator": "archive_only"
+    },
+    {
+      "source_id": "fasdd_v9",
+      "dataset_id": "corpus/fasdd",
+      "archive_manifest": "datasets/corpus/fasdd/manifest.json",
+      "mount_path": "corpus/fasdd",
+      "purpose": ["weak_fire_and_smoke_point_media"],
+      "license": "CC-BY-SA-4.0",
+      "validator": "firewarning_image_manifest"
+    },
+    {
+      "source_id": "pyro_sdis_v0_1_0",
+      "dataset_id": "corpus/pyro-sdis-v0.1.0",
+      "archive_manifest": "datasets/corpus/pyro-sdis-v0.1.0/manifest.json",
+      "mount_path": "corpus/pyro-sdis-v0.1.0",
+      "purpose": ["weak_smoke_column_base_media"],
+      "license": "Apache-2.0",
+      "validator": "firewarning_image_manifest"
+    },
+    {
+      "source_id": "wikimedia_candidates_v0_1_0",
+      "dataset_id": "corpus/wikimedia-candidates-v0.1.0",
+      "archive_manifest": "datasets/corpus/wikimedia-candidates-v0.1.0/manifest.json",
+      "mount_path": "corpus/wikimedia-candidates-v0.1.0",
+      "purpose": ["human_annotation_candidates"],
+      "license": "per-file-open-license",
+      "validator": "firewarning_image_manifest"
+    }
+  ],
+  "excluded_evaluation_sets": [
+    "fire-pointing-critical-v0.1.0",
+    "synthetic-private-evaluation-v0.1.0",
+    "operational-reference-b-operational-reference-v1.0.0"
+  ]
+}

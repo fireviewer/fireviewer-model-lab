@@ -1,0 +1,1 @@
+Migration code bundle 0.1.0. Source-only inputs from the preserved local snapshot; bootstrap pins regenerated explicitly. The prior expected pins and detected drift are retained in registry/legacy-compose-pins.json. Corpus identity and benchmark denylist pins remain unchanged. No model, image, corpus or cloud execution is included.

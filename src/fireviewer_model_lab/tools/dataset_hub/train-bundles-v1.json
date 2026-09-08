@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "repository": "Charlbi/firewarning-train-bundles-v1",
+  "repository_layout": "one_zip_per_train",
+  "bundles": [
+    {
+      "train_id": "media-filter-fire-smoke-v1",
+      "artifact": {
+        "path": "media-filter-fire-smoke-v1.zip",
+        "size_bytes": 32772718037,
+        "sha256": "ed6ee4cf71a2538cfce7b95e6e548528d94b4cea095c8d03ccfc4c0e5ba4c8ae",
+        "entry_count": 173064,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "training_ready": true,
+      "sources": ["fasdd_v9", "pyro_sdis_v0_1_0", "alarmod_forest_fire"],
+      "evaluation_excluded": ["detector_critical_test", "operational-reference-a", "operational-reference-b"]
+    },
+    {
+      "train_id": "burned-area-segmentation-v1",
+      "artifact": {
+        "path": "burned-area-segmentation-v1.zip",
+        "size_bytes": 27926097197,
+        "sha256": "85c2f17248528ebbd5aa8395e72435ba5a12626bb5a53f5730109b11ea5dde36",
+        "entry_count": 65075,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "dataset_ready": true,
+      "training_ready": false,
+      "embedded_contract_status": "runtime_gate_required",
+      "contract_revision": "mvp-a40-v2",
+      "blocking_reasons": [
+        "independent_geographic_critical_test_missing"
+      ],
+      "promotion_ready": false,
+      "promotion_blocking_reasons": [
+        "trained_model_independent_evaluation_missing"
+      ],
+      "sources": ["nasa_hls_burn_scars_v1", "eo4wildfires_materialized_v1"],
+      "evaluation_excluded": ["la_fire_jan_2025", "operational-reference-a", "operational-reference-b"]
+    },
+    {
+      "train_id": "cross-view-localization-v1",
+      "artifact": {
+        "path": "cross-view-localization-v1.zip",
+        "size_bytes": 15895751194,
+        "sha256": "5f5e14083da209bd978117e2c7470f8f63decdb4ba3223914da7e7164aa64f5f",
+        "entry_count": 129413,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "training_ready": false,
+      "embedded_contract_status": "rebuild_required",
+      "replacement_contract_revision": "mvp-a40-v2",
+      "do_not_execute_embedded_entrypoints": true,
+      "repair_note": "PUBLIC_BUNDLE_CONTRACT_REPAIRS.md#cross-view-localization-v1zip",
+      "current_code_training_ready": false,
+      "blocking_reasons": [
+        "congeo_trainer_not_implemented",
+        "plgeo_trainer_not_implemented",
+        "france_rural_mountain_adapter_not_integrated_in_trainer",
+        "independent_double_validated_geographic_test_missing"
+      ],
+      "sources": [
+        "justzoomin_selective_v1",
+        "streetview_global_context_v1",
+        "aerialextrematch_localization",
+        "odm_seneca_rural",
+        "odm_sance_mountain",
+        "cross_view_coarse_localizer_v0_1_0"
+      ],
+      "evaluation_excluded": [
+        "cross_view_registration_critical_v0_1_0",
+        "aerialextrematch_roma_v1",
+        "operational-reference-a",
+        "operational-reference-b"
+      ]
+    },
+    {
+      "train_id": "fire-pointing-lora-v1",
+      "artifact": {
+        "path": "fire-pointing-lora-v1.zip",
+        "size_bytes": 32589764131,
+        "sha256": "a43cda497078b89960c300fce26280171441cf6111c208f96adfcfdecdc9762b",
+        "entry_count": 155507,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": [
+        "fire_pointing_v0_1_0",
+        "fasdd_v9",
+        "pyro_sdis_v0_1_0",
+        "wikimedia_candidates_v0_1_0"
+      ],
+      "evaluation_excluded": ["fire_pointing_critical_v0_1_0", "operational-reference-a", "operational-reference-b"],
+      "training_ready": false,
+      "embedded_contract_status": "rebuild_required",
+      "replacement_contract_revision": "mvp-a40-v2",
+      "do_not_execute_embedded_entrypoints": true,
+      "repair_note": "PUBLIC_BUNDLE_CONTRACT_REPAIRS.md#fire-pointing-lora-v1zip",
+      "current_code_training_ready": false,
+      "blocking_reasons": [
+        "molmopoint_trainer_not_implemented",
+        "weak_supervision_only",
+        "double_validated_pixel_ground_truth_missing"
+      ]
+    },
+    {
+      "train_id": "cross-view-registration-v1",
+      "artifact": {
+        "path": "cross-view-registration-v1.zip",
+        "size_bytes": 2299599606,
+        "sha256": "a7e7d9205c34f96cf1843a7b7a9455e81a704c2926b9ba648bb00ecbddbc2f1e",
+        "entry_count": 989,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": [
+        "cross_view_registration_v0_1_0",
+        "aerialextrematch_localization",
+        "odm_seneca_rural",
+        "odm_sance_mountain"
+      ],
+      "evaluation_excluded": [
+        "cross_view_registration_critical_v0_1_0",
+        "aerialextrematch_roma_v1",
+        "operational-reference-a",
+        "operational-reference-b"
+      ],
+      "training_ready": false,
+      "blocking_reasons": [
+        "official_roma_checkpoint_quality_gate_failed",
+        "independent_double_validated_geographic_test_missing",
+        "fine_tuning_contract_not_implemented"
+      ]
+    },
+    {
+      "train_id": "media-triage-fire-smoke-v1",
+      "artifact": {
+        "path": "media-triage-fire-smoke-v1.zip",
+        "size_bytes": 31688094244,
+        "sha256": "0ce5a30979007468efa8dd2f2ec5b20547943e080a6ed36318297023456ece34",
+        "entry_count": 155064,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": [
+        "fasdd_v9",
+        "pyro_sdis_v0_1_0"
+      ],
+      "evaluation_excluded": [
+        "detector_critical_test",
+        "fire_pointing_critical_v0_1_0",
+        "operational-reference-a",
+        "operational-reference-b"
+      ],
+      "training_ready": false,
+      "blocking_reasons": [
+        "triage_classifier_trainer_not_implemented",
+        "independent_double_validated_triage_test_missing"
+      ]
+    },
+    {
+      "train_id": "orchestrator-gates-sft-v1",
+      "artifact": {
+        "path": "orchestrator-gates-sft-v1.zip",
+        "size_bytes": 17444,
+        "sha256": "3ca4813cae6f04b806fce16be7a08a6854409dcd96df166d62a346e6d9a809ff",
+        "entry_count": 7,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": [
+        "firewarning_stage_contracts",
+        "firewarning_gate_engine",
+        "firewarning_consensus_policy"
+      ],
+      "evaluation_excluded": ["operational-reference-a", "operational-reference-b"],
+      "training_ready": false,
+      "blocking_reasons": [
+        "orchestrator_sft_trainer_not_implemented",
+        "independent_human_validation_missing"
+      ]
+    },
+    {
+      "train_id": "fire-progression-front-inference-v1",
+      "artifact": {
+        "path": "fire-progression-front-inference-v1.zip",
+        "size_bytes": 6493320,
+        "sha256": "0bb682ee726d3ec62054e5c44b7dc84e0a0658e5e8ca5a1286662056020b7f11",
+        "entry_count": 114,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": ["firespread-medeu-v1"],
+      "evaluation_excluded": ["operational-reference-a", "operational-reference-b"],
+      "training_ready": false,
+      "blocking_reasons": [
+        "active_front_labels_are_not_observed",
+        "independent_geographic_critical_test_missing"
+      ]
+    },
+    {
+      "train_id": "daily-wildfire-fact-synthesis-v1",
+      "artifact": {
+        "path": "daily-wildfire-fact-synthesis-v1.zip",
+        "size_bytes": 222162,
+        "sha256": "9e4c7dde666b964a3f38ae64c50383cd7faff7fbdab9d32a42b6ccca398fe332",
+        "entry_count": 35,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": ["crisisfacts-wildfire-2022-v1"],
+      "evaluation_excluded": ["operational-reference-a", "operational-reference-b"],
+      "training_ready": false,
+      "blocking_reasons": [
+        "raw_source_documents_not_redistributed",
+        "france_domain_validation_missing"
+      ]
+    },
+    {
+      "train_id": "wildfire-situation-resources-structured-v1",
+      "artifact": {
+        "path": "wildfire-situation-resources-structured-v1.zip",
+        "size_bytes": 8696884,
+        "sha256": "fc8bd5f419183b1ba603aab2117be842b75ad9acd46f9ba10eb2fff73e6ceb02",
+        "entry_count": 73,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": ["imsr-2007-2021-structured-v1"],
+      "evaluation_excluded": ["operational-reference-a", "operational-reference-b"],
+      "training_ready": false,
+      "blocking_reasons": [
+        "france_domain_validation_missing",
+        "stable_incident_identifiers_unavailable"
+      ]
+    },
+    {
+      "train_id": "engaged-assets-object-detection-v1",
+      "artifact": {
+        "path": "engaged-assets-object-detection-v1.zip",
+        "size_bytes": 1193478095,
+        "sha256": "9a8e746f77ed88b7a8b3fa29ea13448f12ee9e8cdc6841ddfd8175950c079178",
+        "entry_count": 8802,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": ["open-images-v7-engaged-assets-v1"],
+      "evaluation_excluded": ["operational-reference-a", "operational-reference-b"],
+      "training_ready": false,
+      "blocking_reasons": [
+        "fire_engine_class_absent",
+        "operational_firefighting_role_labels_missing",
+        "France_wildfire_domain_test_missing"
+      ]
+    },
+    {
+      "train_id": "camera-depth-pose-prior-v1",
+      "artifact": {
+        "path": "camera-depth-pose-prior-v1.zip",
+        "size_bytes": 39593395922,
+        "sha256": "4f9574b2920126e7f34d62759ff0192c53062bc337e206309106beb0f670c280",
+        "entry_count": 104232,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": ["tartanair-v2-rural-nature-depth-pose-v1"],
+      "evaluation_excluded": ["operational-reference-a", "operational-reference-b"],
+      "training_ready": false,
+      "blocking_reasons": [
+        "synthetic_domain_only",
+        "real_rural_camera_pose_critical_test_missing"
+      ]
+    },
+    {
+      "train_id": "outdoor-metric-depth-v1",
+      "artifact": {
+        "path": "outdoor-metric-depth-v1.zip",
+        "size_bytes": 132759914158,
+        "sha256": "b9aa757c2e52007a3db40fc3c7f0878fb7dd391464832142e8d9b104cbb22bf2",
+        "entry_count": 69183,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": [
+        "diode-outdoor-rgb-depth-v1"
+      ],
+      "evaluation_excluded": [
+        "operational-reference-a",
+        "operational-reference-b"
+      ],
+      "training_ready": true
+    },
+    {
+      "train_id": "wildfire-smoke-detection-v1",
+      "artifact": {
+        "path": "wildfire-smoke-detection-v1.zip",
+        "size_bytes": 13518198597,
+        "sha256": "27abdbe3d3703d9c6fa67bfde136088845726313e148644eb0e948f9a6211e13",
+        "entry_count": 17420,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": ["boreal-forest-fire-detection-v1"],
+      "evaluation_excluded": ["operational-reference-a", "operational-reference-b"],
+      "training_ready": true
+    },
+    {
+      "train_id": "wildfire-smoke-segmentation-v1",
+      "artifact": {
+        "path": "wildfire-smoke-segmentation-v1.zip",
+        "size_bytes": 464864048,
+        "sha256": "23134190da8ef71b157764453f3d5575a339fe469878934c70e4972db33eee0e",
+        "entry_count": 4258,
+        "crc_verified": true,
+        "entry_sha256_verified": true
+      },
+      "sources": ["boreal-forest-fire-segmentation-v1"],
+      "evaluation_excluded": ["operational-reference-a", "operational-reference-b"],
+      "training_ready": false,
+      "blocking_reasons": [
+        "weak_sam_masks_present",
+        "strong_human_mask_coverage_limited"
+      ]
+    }
+  ]
+}

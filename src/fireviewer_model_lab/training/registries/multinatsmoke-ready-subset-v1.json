@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "source_id": "multinatsmoke-rights-compatible-subset",
+  "repository": "hongjinzhao0615/MultiNatSmoke",
+  "repository_revision": "5b7a4e0f7a094d7e27381a5154ad71be99f58137",
+  "archive": {
+    "filename": "MultiNatSmokeDataset.zip",
+    "bytes": 43677465490,
+    "lfs_sha256": "e296b14a7530333ca4a4ced347509a147ed0770fff4f3f7614c09b91b45d3b1c",
+    "http_range_supported": true,
+    "indexed_members": 163565
+  },
+  "selection": {
+    "status": "historical_index_only_excluded_from_training",
+    "image_mask_pairs": 22064,
+    "compressed_bytes": 2239523329,
+    "member_manifest_sha256": "f543d49e45c2b221c5c73f8baddc6e9333ccde24956cb55a589514bd90caa7c1",
+    "full_archive_copy_required": false,
+    "sources": [
+      {
+        "name": "D-Fire",
+        "train_pairs": 8444,
+        "test_pairs": 2081,
+        "total_pairs": 10525,
+        "compressed_bytes": 1307151191,
+        "rights": "CC0-1.0",
+        "rights_evidence": "https://github.com/gaia-solutions-on-demand/DFireDataset/blob/4bf9c31b18fadcd44d5f0b6d66f82bc56fa5e328/LICENSE",
+        "rights_gate": "primary_receipt_available",
+        "annotation_admission": "excluded_upstream_boxes_converted_to_masks_with_SAM_and_mixed_into_pseudo_label_self_training"
+      },
+      {
+        "name": "WSDataset",
+        "train_pairs": 10439,
+        "test_pairs": 1100,
+        "total_pairs": 11539,
+        "compressed_bytes": 932372138,
+        "rights": "MIT_as_declared_by_MultiNatSmoke",
+        "rights_evidence": "https://github.com/henryzhao0615/MultiNatSmoke/blob/5b7a4e0f7a094d7e27381a5154ad71be99f58137/README.md",
+        "rights_gate": "primary_source_receipt_still_required_before_publication",
+        "annotation_admission": "excluded_no_row_level_native_manual_versus_pseudo_label_provenance"
+      }
+    ]
+  },
+  "excluded_sources": {
+    "Boreal": "duplicate_of_existing_audited_source_and_12825092148_compressed_bytes",
+    "AuSmoke": "no_explicit_dataset_license_in_release",
+    "FIgLib": "unspecified_rights",
+    "SmokeSeg": "unspecified_rights",
+    "SMOKE5K_real": "unspecified_rights",
+    "FESB-MLID": "unspecified_rights",
+    "Forest_Fire": "unspecified_rights_and_images_not_in_archive",
+    "FireSpot": "primary_repository_has_no_license",
+    "aiformankind": "CC-BY-NC-SA-4.0",
+    "firecam": "CC-BY-NC-SA-4.0"
+  },
+  "admission": {
+    "annotations_are_preexisting": true,
+    "upstream_pseudo_labeling_detected": true,
+    "decision": "EXCLUDED_FROM_TRAINING_AND_PUBLICATION",
+    "decision_receipt": "multinatsmoke-admission-decision-20260906.json",
+    "pixel_sample_audit": "multinatsmoke-sample-audit-20260905T2356Z.json",
+    "human_annotation_to_run": false,
+    "pseudo_label_generation_to_run": false,
+    "gpu_required_for_intake": false,
+    "training_allowed": false,
+    "publication_allowed": false,
+    "exclusion_reason": "The WACV 2026 MultiNatSmoke paper documents SAM mask generation from boxes and a pseudo-label self-training pipeline; the published archive does not provide row-level provenance proving that D-Fire or WSDataset masks are native or manual rather than pseudo-generated.",
+    "next_gates": []
+  }
+}

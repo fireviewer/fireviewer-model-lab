@@ -1,0 +1,29 @@
+{
+  "schema": "fireviewer.huggingface-public-inventory.v3",
+  "snapshot_date": "2026-09-08",
+  "organization": "fireviewer",
+  "method": "Hugging Face unauthenticated public API",
+  "models": [
+    {"id": "fireviewer/fire-smoke-dfine-m-strict-v1", "revision": "0ef733968748c7ac172273db8c381ea5ea5ff046"},
+    {"id": "fireviewer/fire-smoke-rfdetr-medium-v110-strict-v1", "revision": "b94fa0b90b2077960d07ff406feefd644844f292"},
+    {"id": "fireviewer/fire-smoke-yolo11m-strict-v1", "revision": "c9ed3ade20b79d27560591fcd592c037ffe9caf3"},
+    {"id": "fireviewer/rtdetr-v2-r50-fire-smoke", "revision": "273e0b37b32aad8c43c1ba5c004b9a7b130974ca"},
+    {"id": "fireviewer/segformer-b2-fire-smoke-baseline-v1", "revision": "9e1418ef700ce06eda9e2ab308520adf4fd0329a"}
+  ],
+  "datasets": [
+    {"id": "fireviewer/dataset-from-simulations", "revision": "71664807b9bb20812a5d423f4dc7de2614436fbc"},
+    {"id": "fireviewer/dinov3-cross-view-fireviewer-v1-dataset", "revision": "d4e6a78739a8e0a8efc3d9635f1bc64551911034"},
+    {"id": "fireviewer/fire-smoke-detection-corpus-v1", "revision": "b45f08eb8cfb8636abe64002e95ad0548c9cfe8f"},
+    {"id": "fireviewer/firewarning-train-bundles-v1", "revision": "3207a080f786e3349349759af34385e3d892b4e5"},
+    {"id": "fireviewer/firewarning-training-corpus", "revision": "8528ee1f4a62090d73f966f0fa5c2a721aee8b9d"},
+    {"id": "fireviewer/prithvi-burnscars-training-dataset-v1", "revision": "5a1f6006002000aea031c261daf807ea1500c762"},
+    {"id": "fireviewer/simple-measured-scenes-v1", "revision": "ee102e37fdbb752787fe8988c4d200272aa446e8"}
+  ],
+  "not_claimed": [
+    "private resources",
+    "deleted resources",
+    "local artifacts",
+    "raw benchmark payloads",
+    "source-rights determinations"
+  ]
+}

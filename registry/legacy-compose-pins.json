@@ -1,0 +1,19 @@
+{
+  "expected": {
+    "training/__init__.py": "5347f39488a1caf80541f05685b35d2cb110c25ab3756396e38999d3b64be71c",
+    "training/dinov3_corpus_identity.py": "0fe55f7f5f5437bf25580dd3b70b2626a3d85d48c0f4ddad4241a74e3fd47637",
+    "training/dinov3_multitask_compose.py": "7c81c8e887cc22e2a35929f3705a6437737c9ab514595a67955cc2b6bded8ded",
+    "training/registries/dinov3-independent-benchmark-denylist-v1.json": "7368b1337e4ea363b0fb9e711fff94c5795aaea329a5f87a7afc0b46c1659a40",
+    "training/registries/dinov3-multitask-composition-v1.json": "27de9d64c3d758f2078148fa51ab95d97df9f86c5f4b6e56d05732477462a8d4",
+    "training/dinov3_sagemaker_bundle_bootstrap.py": "d36d82a2e697a22d7b352505adb54eaf594f44b3ba812461bca81441dc5cf168"
+  },
+  "sourceSnapshot": {
+    "training/__init__.py": "5347f39488a1caf80541f05685b35d2cb110c25ab3756396e38999d3b64be71c",
+    "training/dinov3_corpus_identity.py": "0fe55f7f5f5437bf25580dd3b70b2626a3d85d48c0f4ddad4241a74e3fd47637",
+    "training/dinov3_multitask_compose.py": "c6f2b028f8a40f40791519037a9b376de4aa23b0b0688cb5281ebdcfe46de696",
+    "training/registries/dinov3-independent-benchmark-denylist-v1.json": "7368b1337e4ea363b0fb9e711fff94c5795aaea329a5f87a7afc0b46c1659a40",
+    "training/registries/dinov3-multitask-composition-v1.json": "27de9d64c3d758f2078148fa51ab95d97df9f86c5f4b6e56d05732477462a8d4",
+    "training/dinov3_sagemaker_bundle_bootstrap.py": "d36d82a2e697a22d7b352505adb54eaf594f44b3ba812461bca81441dc5cf168"
+  },
+  "note": "Historical pins preserved; migration bundle is newly sealed from inventoried local source."
+}

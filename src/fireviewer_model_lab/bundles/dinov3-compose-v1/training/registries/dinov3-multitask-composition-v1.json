@@ -1,0 +1,203 @@
+{
+  "schema_version": 2,
+  "campaign_id": "fireviewer-dinov3-multitask-composition-v1",
+  "target_repository": "fireviewer/dinov3-multitask-fireviewer-v4-dataset",
+  "target_visibility": "private",
+  "publication_policy": "replace_only_after_hydration_rehash_gpu_smoke_and_independent_benchmark",
+  "detection_base": {
+    "repository": "fireviewer/fire-smoke-detection-corpus-v1",
+    "revision": "8e3cb52e86e15debdff7d37a3ce9eac39fbe1835",
+    "validation_profile": "fireviewer_detection_strict_automated_v1",
+    "validation_run_id": "20260904T173254Z",
+    "rows": 102257,
+    "positive_rows": 58809,
+    "explicit_negative_rows": 43448,
+    "split_counts": {
+      "train": 60981,
+      "validation": 19209,
+      "test": 22067
+    },
+    "manifest_paths": {
+      "alarmod": "manifests/alarmod/manifest.rtdetr.jsonl",
+      "boreal": "manifests/boreal/manifest.jsonl",
+      "fasdd": "manifests/fasdd/manifest.jsonl",
+      "pyro-sdis": "manifests/pyro-sdis/manifest.jsonl"
+    },
+    "positive_task_policy": "presence_only_never_bbox_to_point_or_mask",
+    "negative_task_policy": "explicit_absence_supervises_presence_point_absence_segmentation_zero_and_abstention"
+  },
+  "control_sources": [
+    {
+      "name": "pyro-sdis-negative-qa",
+      "source_id": "pyro-sdis-explicit-negatives",
+      "source_revision": "a1e553ec4d806f71fc6db744cc22bc3469487382",
+      "detection_source_id": "pyro_sdis_a1e553e",
+      "control_record_field": "source_image_name",
+      "manifest_filename": "pyro_sdis_negative_strict_validated_manifest.jsonl",
+      "report_filename": "pyro_sdis_negative_audit_summary.json",
+      "strict_rows_min": 600,
+      "strict_rows_max": 600,
+      "manifest_sha256": "31735c50adf2b4833e2e8ec680d35b3b7d31b4c3dfea5602a8abcfc7c22491ab",
+      "report_sha256": "563f16fdd2bf3cb46cfa8dec06b317e18c6b1cf448fb16afd9a8c73637f212a6",
+      "strict_base_matches_min": 500,
+      "not_admitted_by_detection_base_max": 100,
+      "detection_cleaning_evidence": {
+        "source_rows": 33636,
+        "source_exact_duplicates_removed": 1042,
+        "post_source_dedup_rows": 32594,
+        "final_strict_kept_rows": 30206,
+        "final_strict_not_admitted_rows": 2388,
+        "source_quality_report": "provenance/pyro-sdis/quality-report.json",
+        "strict_cleaning_report": "validation/strict-cleaning-summary.json"
+      },
+      "role": "detection_negative_overlap_control_only_never_append",
+      "s3_prefix": "pointing-corpus-v2/strict-automated/runs/20260905T060057Z/reports/pyro-sdis-negatives/fireviewer-pointing-pyro-negatives-20260905t060057z"
+    }
+  ],
+  "source_identity_contract": {
+    "schema_version": 1,
+    "family_id_algorithm": "source-family-sha256-v1",
+    "event_id_algorithm": "canonical-event-sha256-v1",
+    "families": [
+      {
+        "source_family_id": "sf1_03dab68bcbcd600e61a7fb77e22202752a3220a9f27314a5b231ae5a646f1ff8",
+        "lineage_root_ids": ["dataset:boreal-forest-fire-segmentation"],
+        "bindings": [
+          {"kind": "overlay", "name": "boreal", "event_key_field": "split_group"}
+        ]
+      },
+      {
+        "source_family_id": "sf1_dddf1242ab6aa79009bf7f67bd51430b297ed8f9ded3b34e4d2bf59b7b4d46ee",
+        "lineage_root_ids": ["usfs-research-data-archive:RDS-2018-0046+RDS-2018-0047"],
+        "bindings": [
+          {"kind": "overlay", "name": "camp-swift", "event_key_field": "split_group"}
+        ]
+      },
+      {
+        "source_family_id": "sf1_b86e7fe01c8c81542744c3ebe262a42bc104488d5c1b1a55ffcb9f25712531ae",
+        "lineage_root_ids": ["dataset:kit-industrial-burner-flames"],
+        "bindings": [
+          {"kind": "overlay", "name": "kit", "event_key_field": "split_group"}
+        ]
+      }
+    ],
+    "event_aliases": []
+  },
+  "overlay_sources": [
+    {
+      "name": "boreal",
+      "source_id": "boreal-forest-fire-segmentation-v1",
+      "source_family": "Boreal Forest Fire smoke segmentation",
+      "source_family_id": "sf1_03dab68bcbcd600e61a7fb77e22202752a3220a9f27314a5b231ae5a646f1ff8",
+      "source_revision": "3207a080f786e3349349759af34385e3d892b4e5",
+      "manifest_filename": "boreal_strict_validated_manifest.jsonl",
+      "report_filename": "boreal_audit_summary.json",
+      "strict_rows_min": 39,
+      "strict_rows_max": 39,
+      "manifest_sha256": "940501a963be613262df9545cf7bcf5a13ba73b5da989288f36deabcda40e40e",
+      "report_sha256": "817067207d54f6997dfeb1da5075d1db07d61d52a593b374db3aa919300174b0",
+      "license": "CC-BY-4.0",
+      "redistribution_allowed": true,
+      "allowed_validation_profiles": ["fireviewer_pointing_strict_automated_v1"],
+      "allowed_annotation_strengths": ["strong"],
+      "allowed_annotation_provenances": ["human_pixel_mask"],
+      "allowed_mask_qualities": ["source_provided_strong"],
+      "allowed_point_derivations": ["deterministic_binary_mask_bottom_band_median"],
+      "task_profile": "smoke_segmentation_and_ground_point",
+      "s3_prefix": "pointing-corpus-v2/strict-automated/runs/20260905T060057Z/reports/boreal/fireviewer-pointing-boreal-20260905t060057z"
+    },
+    {
+      "name": "camp-swift",
+      "source_id": "Camp Swift Fire Experiment 2014",
+      "source_family": "Camp Swift EO/IR thermal fire",
+      "source_family_id": "sf1_dddf1242ab6aa79009bf7f67bd51430b297ed8f9ded3b34e4d2bf59b7b4d46ee",
+      "source_revision": "RDS-2018-0046+RDS-2018-0047",
+      "manifest_filename": "camp_swift_strict_validated_manifest.jsonl",
+      "report_filename": "camp_swift_audit_summary.json",
+      "strict_rows_min": 219,
+      "strict_rows_max": 219,
+      "manifest_sha256": "d5ab7da7281534ec1f75678cf29a8d5d087651a2948b55bb9393f6041cb9fca0",
+      "report_sha256": "70d6c0a874aadd7c82e77b5448700b400e0c2c848ed4fe1d1a0cf90be746c071",
+      "license": "CC-BY-4.0",
+      "redistribution_allowed": true,
+      "allowed_validation_profiles": ["fireviewer_pointing_strict_automated_v1"],
+      "allowed_annotation_strengths": ["sensor_derived_strong"],
+      "allowed_annotation_provenances": ["sensor_derived_thermal_reprojection"],
+      "allowed_mask_qualities": ["sensor_derived_thermal_reprojection"],
+      "allowed_point_derivations": ["sensor_mask_bottom_band_median"],
+      "task_profile": "fire_segmentation_and_ground_point",
+      "s3_prefix": "pointing-corpus-v2/strict-automated/runs/20260905T060057Z/reports/camp-swift/fireviewer-pointing-camp-swift-20260905t060057z"
+    },
+    {
+      "name": "kit",
+      "source_id": "kit-industrial-burner-flames",
+      "source_family": "KIT industrial burner flames",
+      "source_family_id": "sf1_b86e7fe01c8c81542744c3ebe262a42bc104488d5c1b1a55ffcb9f25712531ae",
+      "source_revision": "bce34b091b4d200f4c9804269d4e1f3b7f4b9bd3c97c0e296332a18c717a0a54",
+      "manifest_filename": "kit_strict_validated_manifest.jsonl",
+      "report_filename": "kit_strict_audit_summary.json",
+      "strict_rows_min": 100,
+      "strict_rows_max": 200,
+      "manifest_sha256": "b32e6be86c4bb7150ec699cc6845a65e918fd62cc4838d9e356803c7f37f8218",
+      "report_sha256": "29f918e99bdad93aa46ec599e64de19183bf1d6ed1993da745ec8bc19ec1c337",
+      "license": "CC-BY-4.0",
+      "redistribution_allowed": true,
+      "allowed_validation_profiles": ["fireviewer_pointing_strict_automated_v2"],
+      "allowed_annotation_strengths": ["strong"],
+      "allowed_annotation_provenances": ["human_relabelled_by_source_authors"],
+      "allowed_mask_qualities": ["human_relabelled_source_mask"],
+      "allowed_point_derivations": ["none"],
+      "task_profile": "industrial_segmentation_presence_abstention_no_point",
+      "s3_prefix": "pointing-corpus-v2/strict-automated/runs/20260905T044847Z/reports/kit-strict/fireviewer-pointing-kit-strict-20260905t044847z"
+    }
+  ],
+  "hard_gates": {
+    "detection_rows_exact": 102257,
+    "detection_positive_rows_exact": 58809,
+    "detection_explicit_negative_rows_exact": 43448,
+    "one_logical_row_per_image_sha256": true,
+    "bbox_derived_point_rows_max": 0,
+    "weak_or_teacher_generated_rows_max": 0,
+    "payload_hash_mismatches_max": 0,
+    "split_group_leaks_max": 0,
+    "perceptual_near_duplicate_pairs_max": 0,
+    "independent_benchmark_rows_max": 0,
+    "benchmark_hash_matches_max": 0,
+    "unknown_rights_rows_max": 0
+  },
+  "quality_gates": {
+    "pilot_point_positive_rows_min": 200,
+    "professional_point_positive_rows_min": 3000,
+    "professional_fire_base_rows_min": 2000,
+    "professional_smoke_column_base_rows_min": 2000,
+    "professional_point_validation_rows_min": 400,
+    "professional_point_test_rows_min": 400,
+    "point_source_families_min": 8,
+    "largest_point_source_share_max": 0.25,
+    "top_three_point_source_share_max": 0.65,
+    "presence_supervised_rows_min": 100000,
+    "explicit_negative_rows_min": 40000
+  },
+  "benchmark_boundary": {
+    "independent_benchmark_must_remain_separate": true,
+    "denylist_filename": "dinov3-independent-benchmark-denylist-v1.json",
+    "denylist_schema_version": 1,
+    "denylist_sha256": "7368b1337e4ea363b0fb9e711fff94c5795aaea329a5f87a7afc0b46c1659a40",
+    "provenance_guard_sha256": "685c8a345d8df8a9534676b492496c79a8d96483b06b233e9517fa299cdbbccc",
+    "provenance_guard_rows": 200,
+    "denylist_entry_counts": {
+      "raw_image_sha256": 200,
+      "decoded_pixel_sha256": 0,
+      "phash64_imagehash_v1": 392
+    },
+    "decoded_pixel_hash_algorithm": "rgb8-wh-be32-sha256-v1",
+    "perceptual_hash_algorithm": "imagehash-phash64-hash-size-8-v1",
+    "phash_hamming_distance_max": 3,
+    "forbidden_references": [
+      "benchdata",
+      "fireviewer_bench",
+      "independent-benchmark",
+      "benchmark-independent"
+    ]
+  }
+}

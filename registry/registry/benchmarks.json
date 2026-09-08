@@ -1,0 +1,58 @@
+{
+  "schema": "fireviewer.benchmark-registry.v3",
+  "updated": "2026-09-08",
+  "public_claim": "qualified_independent_detection_benchmark",
+  "benchmarks": [
+    {
+      "id": "frozen_external_detection_v1",
+      "task": "visible_fire_smoke_object_detection",
+      "dataset": "Hajorda/flameye-wildfire-detection@test",
+      "dataset_revision": "361a3dea8b877482af9f4ed80eff77ffd39926ef",
+      "images": 512,
+      "boxes": 854,
+      "calibration_images": 129,
+      "heldout_images": 383,
+      "exact_image_hash_overlap_with_fireviewer_train_validation": 0,
+      "participants": [
+        {
+          "model": "fireviewer/fire-smoke-dfine-m-strict-v1",
+          "metrics": {
+            "map50_95": 0.3924,
+            "map50": 0.6838,
+            "precision": 0.6279,
+            "recall": 0.6682,
+            "f1": 0.6475,
+            "negative_false_alarm_rate": 0.1913
+          }
+        },
+        {
+          "model": "fireviewer/rtdetr-v2-r50-fire-smoke",
+          "metrics": {
+            "map50_95": 0.3502,
+            "map50": 0.6332,
+            "precision": 0.7385,
+            "recall": 0.4507,
+            "f1": 0.5598,
+            "negative_false_alarm_rate": 0.0435
+          }
+        },
+        {
+          "model": "fireviewer/fire-smoke-yolo11m-strict-v1",
+          "metrics": {
+            "map50_95": 0.1491,
+            "map50": 0.2784,
+            "precision": 0.4274,
+            "recall": 0.2488,
+            "f1": 0.3145,
+            "negative_false_alarm_rate": 0.3391
+          }
+        }
+      ],
+      "limitations": [
+        "This is a research benchmark, not a safety certification.",
+        "Threshold selection and operational validation remain deployment-specific.",
+        "RF-DETR and segmentation models are excluded until task-comparable independent evidence exists."
+      ]
+    }
+  ]
+}

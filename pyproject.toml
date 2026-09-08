@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fireviewer-model-lab"
+version = "0.1.0"
+description = "Model recipes, corpus preparation, evaluation and explicitly synthetic fixtures."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "AGPL-3.0-or-later"
+dependencies = [
+  "fireviewer-contracts==0.1.0",
+  "fireviewer-geolocation==0.1.0",
+  "httpx==0.28.1",
+  "numpy==2.4.6",
+  "Pillow==12.3.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.0.3", "ruff==0.15.21", "jsonschema==4.26.0", "fireviewer-orchestrator==0.1.0"]
+"training" = [
+  "accelerate==1.14.0",
+  "albumentations==2.0.8",
+  "datasets==4.8.5",
+  "evaluate==0.4.6",
+  "huggingface-hub==0.36.2",
+  "imagehash==4.3.2",
+  "pillow==12.3.0",
+  "pycocotools==2.0.10",
+  "safetensors==0.8.0",
+  "torchmetrics==1.8.2",
+  "transformers==4.57.6"
+]
+"spatial-training" = [
+  "huggingface-hub==0.36.2",
+  "httpx==0.28.1",
+  "numpy==2.4.6",
+  "pillow==12.3.0",
+  "pyproj==3.7.2",
+  "pyyaml==6.0.3",
+  "rasterio==1.4.4"
+]
+"spatial-train" = [
+  "accelerate==1.14.0",
+  "peft==0.19.1",
+  "psutil==7.2.2",
+  "qwen-vl-utils==0.0.14",
+  "safetensors==0.8.0",
+  "transformers==4.57.6"
+]
+"corpus" = [
+  "datasets==4.8.5",
+  "huggingface-hub==0.36.2",
+  "httpx==0.28.1",
+  "imagehash==4.3.2",
+  "openpyxl==3.1.5",
+  "pillow==12.3.0"
+]
+"burned-area-training" = [
+  "h5py==3.15.1",
+  "numpy==2.4.6",
+  "pyyaml==6.0.3",
+  "rasterio==1.4.4",
+  "terratorch==1.2.10"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.yaml", "*.yml", "*.txt", "*.md", "py.typed"]
+
+"fireviewer_model_lab" = ["bundles/dinov3-compose-v1/PROVENANCE.md", "bundles/dinov3-compose-v1/training/*.py", "bundles/dinov3-compose-v1/training/registries/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-markers"
+
+[project.scripts]
+fireviewer-model-qa = "fireviewer_model_lab.training.dinov3_dataset_quality_profile:main"

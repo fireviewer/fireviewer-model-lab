@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "campaign_id": "firewarning-additional-datasets-v1",
+  "target_repository": "Charlbi/firewarning-training-corpus",
+  "target_private": true,
+  "payload_execution_policy": {
+    "remote_only": false,
+    "local_temporary_allowed": true,
+    "allowed_workspace_roots": [
+      "/runpod-volume/firewarning-datasets",
+      "/workspace/firewarning-datasets"
+    ],
+    "raw_payload_retention": "delete_after_verified_upload",
+    "execute_upstream_dataset_code": false
+  },
+  "batches": [
+    {
+      "batch_id": "detection_uav_pointing_v1",
+      "purpose": [
+        "fire_smoke_detection",
+        "visible_fire_pointing",
+        "uav_domain_evaluation"
+      ],
+      "target_prefix": "additional/v1/detection_uav_pointing_v1",
+      "sources": [
+        {
+          "source_id": "alarmod_forest_fire",
+          "repository": "alarmod/forest_fire",
+          "revision": "374d506829827673fd8aee7a30cdc414a05071ff",
+          "declared_license": "GPL-3.0",
+          "expected_repo_files": 4,
+          "expected_repo_bytes": 1082880295,
+          "payload_policy": "mirror_normalized",
+          "allow_patterns": [
+            "README.md",
+            "train.zip",
+            "val.zip"
+          ],
+          "expected_assets": {
+            "train.zip": {
+              "size_bytes": 540346658,
+              "sha256": "b11e422c26e3e1b0be984286b177b60e368402a8db801a1cf464c7f693b25d90"
+            },
+            "val.zip": {
+              "size_bytes": 542529751,
+              "sha256": "cd201d8efa073add0771f71aeb5e616265dcfa53dd0ea4a4bb22eb8944098249"
+            }
+          },
+          "declared_rows": {
+            "train": 4500,
+            "validation": 4500
+          },
+          "split_policy": "preserve_upstream_temporal_split",
+          "normalization": "inspect_then_convert_uav_crops_and_source_annotations",
+          "training_gate": "labels_and_coordinates_must_be_parsed_and_validated_before_promotion"
+        }
+      ]
+    },
+    {
+      "batch_id": "satellite_burnscar_multisensor_v1",
+      "purpose": [
+        "burned_area_segmentation",
+        "multisensor_satellite_fusion",
+        "independent_domain_evaluation"
+      ],
+      "target_prefix": "additional/v1/satellite_burnscar_multisensor_v1",
+      "sources": [
+        {
+          "source_id": "eo4wildfires",
+          "repository": "AUA-Informatics-Lab/eo4wildfires",
+          "revision": "d194cca045aa6b0dc0e53b0ee45573324efa5c4f",
+          "declared_license": "CC-BY-SA-4.0",
+          "expected_repo_files": 9,
+          "expected_repo_bytes": 25475268109,
+          "payload_policy": "mirror_normalized",
+          "allow_patterns": [
+            "README.md",
+            "eo4wildfires.py",
+            "files_train.csv.gz",
+            "files_val.csv.gz",
+            "files_test.csv.gz",
+            "eo4wildfires.tar.gz"
+          ],
+          "expected_assets": {
+            "eo4wildfires.py": {
+              "size_bytes": 10289,
+              "sha256": "d357016fa68840f47d309f1b69bb41ea8bdd99d122a2157f53ad8cd05122f7ab"
+            },
+            "files_train.csv.gz": {
+              "size_bytes": 58010,
+              "sha256": "bd5f077d86aaab0f0406bcdb86aba04669b0367ff2d65ad4d4b74bb0e713cccd",
+              "declared_examples": 20307
+            },
+            "files_val.csv.gz": {
+              "size_bytes": 15094,
+              "sha256": "b55ac8f0e42cff789f4f393710b980fe7a1a275fbea82354d09f5d74f241ca1c",
+              "declared_examples": 5077
+            },
+            "files_test.csv.gz": {
+              "size_bytes": 18749,
+              "sha256": "ce07dfac670e5553d8c868fd26b8bdbd0346eca8286e12dc6ab5a96b09195557",
+              "declared_examples": 6346
+            },
+            "eo4wildfires.tar.gz": {
+              "size_bytes": 25474671500,
+              "sha256": "f9939c74fa11d90cf4a0e51f3079161311cc218db1f42deedd7ed1d7b167c5c3"
+            }
+          },
+          "declared_events": 31730,
+          "declared_period": "2018-2022",
+          "declared_sensors": [
+            "Sentinel-1",
+            "Sentinel-2",
+            "NASA_POWER",
+            "EFFIS"
+          ],
+          "split_policy": "preserve_official_event_splits_and_group_by_event",
+          "normalization": "safe_extract_raw_archive_without_executing_upstream_loader",
+          "training_gate": "scene_mask_georeference_and_event_split_must_validate_before_promotion"
+        }
+      ]
+    },
+    {
+      "batch_id": "triage_reference_quarantine_v1",
+      "purpose": [
+        "private_benchmark_registry",
+        "license_audit",
+        "schema_audit"
+      ],
+      "target_prefix": "additional/v1/triage_reference_quarantine_v1",
+      "sources": [
+        {
+          "source_id": "shravanig_fire_detection_final",
+          "repository": "Shravanig/fire_detection_final",
+          "revision": "9c23662ed8a0b8ad98ac1ba411bbdb39ddb4b897",
+          "declared_license": null,
+          "expected_repo_files": 5,
+          "expected_repo_bytes": 891542849,
+          "payload_policy": "reference_only",
+          "observed_schema": "image_plus_classlabel_fire_normal_smoke",
+          "observed_rows": {
+            "train": 6060,
+            "validation": 756,
+            "test": 759
+          },
+          "training_gate": "explicit_reuse_permission_required"
+        },
+        {
+          "source_id": "notbeekay_forest_fire_dataset",
+          "repository": "notbeekay/forest-fire-dataset",
+          "revision": "1bb38589c1d334bd37031e2b62852750d31a6107",
+          "declared_license": null,
+          "expected_repo_files": 4273,
+          "expected_repo_bytes": 377860329,
+          "payload_policy": "reference_only",
+          "observed_schema": "image_plus_classlabel_fire_non_fire",
+          "observed_rows": {
+            "train": 4272
+          },
+          "training_gate": "explicit_reuse_permission_and_grouped_resplit_required"
+        },
+        {
+          "source_id": "tamduluza_fire_detection_v1",
+          "repository": "TaMduluza/Fire_detection_v1",
+          "revision": "722e0235000d92a6d9d611b835cebabe9cbaef4b",
+          "declared_license": "EUPL-1.1",
+          "expected_repo_files": 302,
+          "expected_repo_bytes": 13415355,
+          "payload_policy": "reference_only",
+          "observed_schema": "folder_names_exposed_as_labels_test_train_valid",
+          "training_gate": "semantic_labels_must_be_reconstructed_and_reviewed"
+        },
+        {
+          "source_id": "touati_kamel_forest_fire",
+          "repository": "touati-kamel/forest-fire-dataset",
+          "revision": "5b575b8df0c53fba46ae6b17cc9b724b87c77896",
+          "declared_license": "Apache-2.0",
+          "expected_repo_files": 34511,
+          "expected_repo_bytes": 1325430792,
+          "payload_policy": "reference_only",
+          "observed_schema": "storage_bucket_names_exposed_as_labels",
+          "observed_rows": 69018,
+          "training_gate": "upstream_video_groups_and_semantic_labels_required_to_remove_temporal_leakage"
+        },
+        {
+          "source_id": "datacluster_fire_and_smoke",
+          "repository": "Dataclusterlabspvtltd/Fire-and-Smoke-Dataset",
+          "revision": "154cc7f2728dab56047d37a0de977c4dff0d439b",
+          "declared_license": "custom-restricted",
+          "expected_repo_files": 203,
+          "expected_repo_bytes": 93275250,
+          "payload_policy": "blocked_no_redistribution",
+          "training_gate": "commercial_training_and_redistribution_not_permitted_by_dataset_terms"
+        }
+      ]
+    },
+    {
+      "batch_id": "crossview_benchmark_external_v1",
+      "purpose": [
+        "ground_to_aerial_pose_benchmark",
+        "camera_pose_and_depth_evaluation"
+      ],
+      "target_prefix": "additional/v1/crossview_benchmark_external_v1",
+      "sources": [
+        {
+          "source_id": "aerialmegadepth",
+          "repository": "kvuong2711/aerialmegadepth",
+          "revision": null,
+          "declared_license": "non-commercial-research-only",
+          "payload_policy": "direct_benchmark_only",
+          "declared_images": 132000,
+          "declared_scenes": 137,
+          "training_gate": "gated_access_and_non_commercial_research_terms",
+          "mirror_to_target_repository": false
+        }
+      ]
+    }
+  ]
+}
