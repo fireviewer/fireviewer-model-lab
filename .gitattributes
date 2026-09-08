@@ -1,0 +1,6 @@
+# Preserve the admitted training bundle hashes on every OS.
+src/fireviewer_model_lab/training/__init__.py -text
+src/fireviewer_model_lab/training/dinov3_corpus_identity.py -text
+src/fireviewer_model_lab/training/dinov3_multitask_compose.py -text
+src/fireviewer_model_lab/training/registries/dinov3-independent-benchmark-denylist-v1.json -text
+src/fireviewer_model_lab/training/registries/dinov3-multitask-composition-v1.json -text
