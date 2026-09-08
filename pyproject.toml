@@ -4,21 +4,21 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fireviewer-model-lab"
-version = "0.1.0"
+version = "0.1.1"
 description = "Model recipes, corpus preparation, evaluation and explicitly synthetic fixtures."
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
 license = "AGPL-3.0-or-later"
 dependencies = [
-  "fireviewer-contracts==0.1.0",
-  "fireviewer-geolocation==0.1.0",
+  "fireviewer-contracts==0.1.1",
+  "fireviewer-geolocation==0.1.1",
   "httpx==0.28.1",
   "numpy==2.4.6",
   "Pillow==12.3.0"
 ]
 
 [project.optional-dependencies]
-dev = ["pytest==9.0.3", "ruff==0.15.21", "jsonschema==4.26.0", "fireviewer-orchestrator==0.1.0"]
+dev = ["pytest==9.0.3", "ruff==0.15.21", "jsonschema==4.26.0", "fireviewer-orchestrator==0.1.1"]
 "training" = [
   "accelerate==1.14.0",
   "albumentations==2.0.8",
