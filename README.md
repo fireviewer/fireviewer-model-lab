@@ -2,14 +2,14 @@
 
 Model recipes, corpus preparation, evaluation and explicitly synthetic fixtures.
 
-Python package: `fireviewer_model_lab`. Version: `0.1.0`.
+Python package: `fireviewer_model_lab`. Version: `0.1.1`.
 
 ## Installation
 
 Install the versioned release wheels (including private FireViewer dependencies) from the release bundle. No sibling source checkout is required.
 
 ```sh
-python -m pip install --find-links /path/to/release/wheels fireviewer-model-lab==0.1.0
+python -m pip install --find-links /path/to/release/wheels fireviewer-model-lab==0.1.1
 python -m pytest tests -q
 ```
 
@@ -26,6 +26,11 @@ Source correspondence and hashes are recorded in the migration dossier. Existing
 Docker was deferred during the initial source delivery. The resumed private container phase, pinned images and acceptance limits are documented in [fireviewer-docker](https://github.com/fireviewer/fireviewer-docker). Production deployment remains separate. CPU/schema tests do not qualify GPU, visual or scientific performance.
 
 ## Sources et commandes propres au composant
+
+Le registre maintenu se trouve dans [`registry/registry`](registry/registry) et
+sa documentation dans [`registry/docs`](registry/docs). Les anciennes sources
+`fireviewer/models` et `fireviewer-sdg` deviennent des archives privées ; voir
+[les consommateurs et critères de retrait](docs/LEGACY-CONSUMERS.md).
 
 Commande locale de QA : `fireviewer-model-qa --help`. Recettes AI dans `training`, recettes locales supplémentaires dans `recipes`, registres documentaires dans `registry`. Le bundle de composition 0.1.0 est explicitement re-scellé ; les anciens pins et la divergence du snapshot sont conservés dans `registry/legacy-compose-pins.json`. Aucun lancement cloud n’a été exécuté.
 
