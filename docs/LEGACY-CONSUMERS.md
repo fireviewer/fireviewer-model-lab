@@ -1,7 +1,7 @@
 # Consommateurs et archives - 9 septembre 2026
 
 Ce dépôt maintient le registre des modèles et les fonctions synthétiques
-indépendantes utiles. Les deux anciennes sources sont prêtes pour archivage privé :
+indépendantes utiles. Les deux anciennes sources sont remplacées et sauvegardées en archives restaurables :
 
 | Source historique | Source canonique conservée | Contrôle |
 |---|---|---|
@@ -30,3 +30,5 @@ consommateurs qui n'ont pas encore migré.
 Les snapshots de registres conservent leurs dates et leurs notices. Il n'y a ici
 aucune publication de poids, aucun lancement GPU et aucune nouvelle admission de
 dataset. L'attribution technique ne remplace pas les actes à signer.
+
+Les archives Git complètes et métadonnées sont recensées dans le registre privé d’organisation de fireviewer-docker. Les branches de recherche locales restent séparées sous les archives du poste ; le clone actif du laboratoire est propre.
