@@ -1,5 +1,7 @@
 # fireviewer-model-lab
 
+> **Source active FV · private.** Préparation des corpus, entraînement, benchmarks et registre des modèles. Voir [où travailler, quoi commiter et comment reprendre](ORGANISATION.md).
+
 Model recipes, corpus preparation, evaluation and explicitly synthetic fixtures.
 
 Python package: `fireviewer_model_lab`. Version: `0.1.1`.
@@ -29,7 +31,7 @@ Docker was deferred during the initial source delivery. The resumed private cont
 
 Le registre maintenu se trouve dans [`registry/registry`](registry/registry) et
 sa documentation dans [`registry/docs`](registry/docs). Les anciennes sources
-`fireviewer/models` et `fireviewer-sdg` deviennent des archives privées ; voir
+`fireviewer/models` et `fireviewer-sdg` sont conservées en archives restaurables hors des dépôts actifs ; voir
 [les consommateurs et critères de retrait](docs/LEGACY-CONSUMERS.md).
 
 Commande locale de QA : `fireviewer-model-qa --help`. Recettes AI dans `training`, recettes locales supplémentaires dans `recipes`, registres documentaires dans `registry`. Le bundle de composition 0.1.0 est explicitement re-scellé ; les anciens pins et la divergence du snapshot sont conservés dans `registry/legacy-compose-pins.json`. Aucun lancement cloud n’a été exécuté.
