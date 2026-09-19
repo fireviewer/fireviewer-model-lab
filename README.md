@@ -1,5 +1,19 @@
 # fireviewer-model-lab
 
+## Repères documentaires — 19 septembre 2026
+
+- **Rôle :** Préparation des corpus, recettes d’entraînement, évaluations, benchmarks et registre des modèles.
+- **Statut :** Actif — package v0.1.1. Les anciens dépôts `models` et `fireviewer-sdg` restent archivés.
+- **Entrées :** Corpus vérifiés, manifestes de droits, configurations et checkpoints.
+- **Sorties :** Recettes, registres, rapports d’évaluation, artefacts explicitement synthétiques et métadonnées de modèles.
+- **Limites :** Ne pas comparer des métriques issues de protocoles différents. Conserver split, révision, corpus, environnement et limites de chaque score.
+
+[Fiche du dépôt](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/repositories/fireviewer-model-lab.md) · [Architecture](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/ARCHITECTURE.md) · [Statuts et vocabulaire](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/STATUTS_ET_VOCABULAIRE.md).
+
+Cette revue documentaire ne renouvelle aucun test ni aucune réception. Les procédures, versions et preuves techniques ci-dessous conservent leur périmètre et leur date.
+
+Le [catalogue public Hugging Face](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/HUGGINGFACE.md) distingue les benchmarks indépendants de D-FINE/RT-DETR/YOLO, la validation d’entraînement RF-DETR et le pilote DINOv3. Les corpus privés gardent leurs cards et droits propres.
+
 > **Source active FV · private.** Préparation des corpus, entraînement, benchmarks et registre des modèles. Voir [où travailler, quoi commiter et comment reprendre](ORGANISATION.md).
 
 Model recipes, corpus preparation, evaluation and explicitly synthetic fixtures.
