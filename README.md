@@ -14,7 +14,7 @@ Cette revue documentaire ne renouvelle aucun test ni aucune réception. Les proc
 
 Le [catalogue public Hugging Face](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/HUGGINGFACE.md) distingue les benchmarks indépendants de D-FINE/RT-DETR/YOLO, la validation d’entraînement RF-DETR et le pilote DINOv3. Les corpus privés gardent leurs cards et droits propres.
 
-> **Source active FV · private.** Préparation des corpus, entraînement, benchmarks et registre des modèles. Voir [où travailler, quoi commiter et comment reprendre](ORGANISATION.md).
+> **Source active FV · public.** Préparation des corpus, entraînement, benchmarks et registre des modèles. Voir [où travailler, quoi commiter et comment reprendre](ORGANISATION.md).
 
 Model recipes, corpus preparation, evaluation and explicitly synthetic fixtures.
 
@@ -22,7 +22,7 @@ Python package: `fireviewer_model_lab`. Version: `0.1.1`.
 
 ## Installation
 
-Install the versioned release wheels (including private FireViewer dependencies) from the release bundle. No sibling source checkout is required.
+Install the versioned release wheels (including versioned FireViewer dependencies) from the release bundle. No sibling source checkout is required.
 
 ```sh
 python -m pip install --find-links /path/to/release/wheels fireviewer-model-lab==0.1.1
@@ -50,4 +50,12 @@ sa documentation dans [`registry/docs`](registry/docs). Les anciennes sources
 
 Commande locale de QA : `fireviewer-model-qa --help`. Recettes AI dans `training`, recettes locales supplémentaires dans `recipes`, registres documentaires dans `registry`. Le bundle de composition 0.1.0 est explicitement re-scellé ; les anciens pins et la divergence du snapshot sont conservés dans `registry/legacy-compose-pins.json`. Aucun lancement cloud n’a été exécuté.
 
-Les dépendances de base sont verrouillées avec hashes dans `requirements.lock.txt` (Python 3.13). Installer les wheels privés du même bundle via `--find-links`. Les extras lourds restent liés à leurs versions existantes et ne qualifient aucun GPU. Les tests de composant et leurs dépendances de test sont recensés dans le dossier unique de migration.
+Les dépendances de base sont verrouillées avec hashes dans `requirements.lock.txt` (Python 3.13). Installer les wheels versionnés du même bundle via `--find-links`. Les extras lourds restent liés à leurs versions existantes et ne qualifient aucun GPU. Les tests de composant et leurs dépendances de test sont recensés dans le dossier unique de migration.
+
+## Ouverture du code source — 19 septembre 2026
+
+Ce dépôt fait partie du premier lot de huit composants FIRE-VIEWER ouvert au public sur décision du mainteneur. Le code original reste sous **AGPL-3.0-or-later** et la documentation originale sous **CC BY 4.0**, avec les notices et droits tiers existants.
+
+Cette ouverture porte sur le code, son historique et les artefacts de développement déjà associés au dépôt. Les services déployés, comptes, données, corpus, modèles, secrets et autorisations des ressources externes gardent leur propre périmètre. Les sources des sites, du backend, des applications Android et de l’infrastructure restent privées. La visibilité publique ne constitue ni une nouvelle recette fonctionnelle ni un acte de cession des droits.
+
+[Inventaire et périmètre d’ouverture](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/OPEN_SOURCE.md).
